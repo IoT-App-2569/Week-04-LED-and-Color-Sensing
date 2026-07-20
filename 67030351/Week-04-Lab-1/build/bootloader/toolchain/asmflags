@@ -1,0 +1,6 @@
+"-specs=/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader/specs/picolibc.specs"
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero

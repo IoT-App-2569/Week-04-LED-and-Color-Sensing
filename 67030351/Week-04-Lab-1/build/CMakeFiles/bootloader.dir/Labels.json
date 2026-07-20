@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
