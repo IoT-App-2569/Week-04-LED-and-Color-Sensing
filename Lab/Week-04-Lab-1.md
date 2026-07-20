@@ -144,9 +144,6 @@ idf_component_register(SRCS "main.c"
 
 ```
 
-
 ```
 
 #### 4.2 จากการสังเกตุ LED 
-
-
