@@ -4,7 +4,17 @@
 #### 4.1 จาก `idf.py monitor` 
 
 ```
------------------------------------------------------------ I (10773) LAB1_RGB_TIMING: Phase R: ON I (13273) LAB1_RGB_TIMING: Phase R: OFF I (13273) LAB1_RGB_TIMING: Phase G: ON I (15773) LAB1_RGB_TIMING: Phase G: OFF I (15773) LAB1_RGB_TIMING: Phase B: ON I (18273) LAB1_RGB_TIMING: Phase B: OFF I (18273) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I (21273) LAB1_RGB_TIMING: Phase R: ON I (23773) LAB1_RGB_TIMING: Phase R: OFF I (23773) LAB1_RGB_TIMING: Phase G: ON I (26273) LAB1_RGB_TIMING: Phase G: OFF I (26273) LAB1_RGB_TIMING: Phase B: ON I (28773) LAB1_RGB_TIMING: Phase B: OFF I (28773) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. -----------------------------------------------------------
+----------------------------------------------------------- I (10773)
+LAB1_RGB_TIMING: Phase R: ON I (13273) LAB1_RGB_TIMING: Phase R: OFF I (13273)
+LAB1_RGB_TIMING: Phase G: ON I (15773) LAB1_RGB_TIMING: Phase G: OFF I (15773)
+LAB1_RGB_TIMING: Phase B: ON I (18273) LAB1_RGB_TIMING: Phase B: OFF I (18273)
+LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+----------------------------------------------------------- I (21273)
+LAB1_RGB_TIMING: Phase R: ON I (23773) LAB1_RGB_TIMING: Phase R: OFF I (23773)
+LAB1_RGB_TIMING: Phase G: ON I (26273) LAB1_RGB_TIMING: Phase G: OFF I (26273)
+LAB1_RGB_TIMING: Phase B: ON I (28773) LAB1_RGB_TIMING: Phase B: OFF I (28773)
+LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
 
 ```
 
