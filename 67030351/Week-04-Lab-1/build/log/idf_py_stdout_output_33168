@@ -1,0 +1,1209 @@
+Command: /Users/petchauisui/.espressif/tools/python/v6.0.2/venv/bin/python /Users/petchauisui/.espressif/v6.0.2/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/Week-04-Lab-1.elf /Users/petchauisui/Desktop/Dev/Week-04-LED-and-Color-Sensing/67030351/Week-04-Lab-1/build/bootloader/bootloader.elf -m '/Users/petchauisui/.espressif/tools/python/v6.0.2/venv/bin/python' '/Users/petchauisui/.espressif/v6.0.2/esp-idf/tools/idf.py'
+k'Week-04-Lab-1
+I�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15820
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 20 2026 09:51:54[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08d38h ( 36152) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=00018d60 vaddr=3ffb0000 size=02a2ch ( 10796) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001b794 vaddr=40080000 size=04884h ( 18564) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0d340h ( 54080) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0002d368 vaddr=40084884 size=0630ch ( 25356) load[0m
+[0;32mI (142) esp_image: segment 5: paddr=0003367c vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (148) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (148) boot: Disabling RNG early entropy source...[0m
+[0;32mI (160) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     Week-04-Lab-1[0m
+[0;32mI (178) app_init: App version:      ad00c36[0m
+[0;32mI (182) app_init: Compile time:     Jul 20 2026 09:51:47[0m
+[0;32mI (187) app_init: ELF file SHA256:  02f98e553...[0m
+[0;32mI (192) app_init: ESP-IDF:          v6.0.2[0m
+[0;32mI (196) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (199) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (203) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (207) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (214) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (219) heap_init: At 3FFB33D0 len 0002CC30 (179 KiB): DRAM[0m
+[0;32mI (224) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (229) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (235) heap_init: At 4008AB90 len 00015470 (85 KiB): IRAM[0m
+[0;33mW (241) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (253) spi_flash: detected chip: generic[0m
+[0;32mI (257) spi_flash: flash io: dio[0m
+[0;33mW (260) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (273) main_task: Started on CPU0[0m
+[0;32mI (273) main_task: Calling app_main()[0m
+[0;32mI (273) LAB1_RGB_TIMING: RGB LED Timing System Started.[0m
+[0;32mI (283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (2783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (2783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (5283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (5283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (7783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (7783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (10783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (13283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (13283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (15783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (15783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (18283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (18283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (21283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (23783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (23783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (26283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (26283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (28783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (28783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (31783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (34283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (34283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (36783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (36783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (39283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (39283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (42283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (44783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (44783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (47283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (47283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (49783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (49783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (52783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (55283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (55283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (57783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (57783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (60283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (60283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (63283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (65783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (65783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (68283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (68283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (70783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (70783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (73783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (76283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (76283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (78783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (78783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (81283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (81283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (84283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (86783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (86783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (89283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (89283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (91783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (91783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (94783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (97283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (97283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (99783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (99783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (102283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (102283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (105283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (107783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (107783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (110283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (110283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (112783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (112783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (115783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (118283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (118283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (120783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (120783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (123283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (123283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (126283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (128783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (128783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (131283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (131283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (133783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (133783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (136783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (139283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (139283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (141783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (141783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (144283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (144283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (147283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (149783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (149783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (152283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (152283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (154783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (154783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (157783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (160283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (160283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (162783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (162783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (165283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (165283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (168283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (170783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (170783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (173283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (173283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (175783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (175783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (178783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (181283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (181283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (183783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (183783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (186283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (186283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (189283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (191783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (191783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (194283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (194283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (196783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (196783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (199783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (202283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (202283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (204783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (204783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (207283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (207283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (210283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (212783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (212783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (215283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (215283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (217783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (217783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (220783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (223283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (223283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (225783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (225783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (228283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (228283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (231283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (233783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (233783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (236283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (236283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (238783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (238783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (241783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (244283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (244283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (246783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (246783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (249283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (249283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (252283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (254783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (254783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (257283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (257283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (259783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (259783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (262783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (265283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (265283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (267783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (267783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (270283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (270283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (273283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (275783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (275783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (278283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (278283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (280783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (280783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (283783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (286283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (286283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (288783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (288783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (291283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (291283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (294283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (296783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (296783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (299283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (299283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (301783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (301783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (304783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (307283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (307283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (309783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (309783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (312283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (312283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (315283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (317783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (317783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (320283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (320283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (322783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (322783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (325783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (328283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (328283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (330783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (330783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (333283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (333283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (336283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (338783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (338783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (341283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (341283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (343783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (343783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (346783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (349283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (349283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (351783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (351783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (354283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (354283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (357283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (359783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (359783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (362283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (362283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (364783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (364783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (367783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (370283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (370283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (372783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (372783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (375283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (375283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (378283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (380783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (380783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (383283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (383283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (385783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (385783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (388783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (391283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (391283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (393783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (393783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (396283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (396283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (399283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (401783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (401783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (404283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (404283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (406783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (406783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (409783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (412283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (412283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (414783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (414783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (417283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (417283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (420283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (422783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (422783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (425283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (425283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (427783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (427783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (430783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (433283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (433283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (435783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (435783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (438283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (438283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (441283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (443783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (443783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (446283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (446283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (448783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (448783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (451783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (454283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (454283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (456783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (456783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (459283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (459283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (462283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (464783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (464783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (467283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (467283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (469783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (469783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (472783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (475283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (475283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (477783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (477783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (480283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (480283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (483283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (485783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (485783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (488283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (488283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (490783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (490783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (493783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (496283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (496283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (498783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (498783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (501283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (501283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (504283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (506783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (506783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (509283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (509283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (511783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (511783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (514783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (517283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (517283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (519783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (519783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (522283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (522283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (525283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (527783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (527783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (530283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (530283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (532783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (532783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (535783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (538283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (538283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (540783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (540783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (543283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (543283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (546283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (548783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (548783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (551283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (551283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (553783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (553783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (556783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (559283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (559283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (561783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (561783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (564283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (564283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (567283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (569783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (569783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (572283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (572283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (574783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (574783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (577783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (580283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (580283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (582783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (582783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (585283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (585283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (588283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (590783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (590783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (593283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (593283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (595783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (595783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (598783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (601283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (601283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (603783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (603783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (606283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (606283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (609283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (611783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (611783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (614283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (614283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (616783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (616783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (619783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (622283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (622283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (624783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (624783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (627283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (627283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (630283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (632783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (632783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (635283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (635283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (637783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (637783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (640783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (643283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (643283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (645783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (645783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (648283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (648283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (651283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (653783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (653783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (656283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (656283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (658783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (658783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (661783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (664283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (664283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (666783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (666783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (669283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (669283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (672283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (674783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (674783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (677283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (677283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (679783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (679783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (682783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (685283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (685283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (687783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (687783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (690283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (690283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (693283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (695783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (695783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (698283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (698283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (700783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (700783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (703783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (706283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (706283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (708783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (708783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (711283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (711283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (714283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (716783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (716783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (719283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (719283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (721783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (721783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (724783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (727283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (727283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (729783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (729783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (732283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (732283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (735283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (737783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (737783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (740283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (740283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (742783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (742783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (745783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (748283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (748283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (750783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (750783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (753283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (753283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (756283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (758783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (758783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (761283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (761283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (763783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (763783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (766783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (769283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (769283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (771783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (771783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (774283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (774283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (777283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (779783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (779783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (782283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (782283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (784783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (784783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (787783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (790283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (790283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (792783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (792783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (795283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (795283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (798283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (800783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (800783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (803283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (803283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (805783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (805783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (808783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (811283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (811283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (813783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (813783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (816283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (816283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (819283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (821783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (821783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (824283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (824283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (826783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (826783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (829783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (832283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (832283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (834783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (834783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (837283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (837283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (840283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (842783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (842783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (845283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (845283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (847783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (847783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (850783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (853283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (853283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (855783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (855783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (858283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (858283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (861283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (863783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (863783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (866283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (866283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (868783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (868783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (871783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (874283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (874283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (876783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (876783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (879283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (879283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (882283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (884783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (884783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (887283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (887283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (889783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (889783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (892783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (895283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (895283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (897783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (897783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (900283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (900283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (903283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (905783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (905783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (908283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (908283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (910783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (910783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (913783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (916283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (916283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (918783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (918783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (921283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (921283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (924283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (926783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (926783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (929283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (929283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (931783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (931783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (934783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (937283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (937283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (939783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (939783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (942283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (942283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (945283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (947783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (947783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (950283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (950283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (952783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (952783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (955783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (958283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (958283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (960783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (960783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (963283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (963283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (966283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (968783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (968783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (971283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (971283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (973783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (973783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (976783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (979283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (979283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (981783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (981783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (984283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (984283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (987283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (989783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (989783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (992283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (992283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (994783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (994783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (997783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1000283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1000283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1002783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1002783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1005283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1005283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1008283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1010783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1010783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1013283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1013283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1015783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1015783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1018783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1021283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1021283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1023783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1023783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1026283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1026283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1029283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1031783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1031783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1034283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1034283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1036783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1036783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1039783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1042283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1042283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1044783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1044783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1047283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1047283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1050283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1052783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1052783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1055283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1055283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1057783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1057783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1060783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1063283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1063283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1065783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1065783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1068283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1068283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1071283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1073783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1073783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1076283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1076283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1078783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1078783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1081783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1084283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1084283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1086783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1086783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1089283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1089283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1092283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1094783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1094783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1097283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1097283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1099783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1099783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1102783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1105283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1105283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1107783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1107783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1110283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1110283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1113283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1115783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1115783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1118283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1118283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1120783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1120783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1123783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1126283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1126283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1128783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1128783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1131283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1131283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1134283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1136783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1136783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1139283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1139283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1141783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1141783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1144783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1147283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1147283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1149783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1149783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1152283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1152283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1155283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1157783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1157783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1160283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1160283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1162783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1162783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1165783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1168283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1168283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1170783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1170783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1173283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1173283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1176283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1178783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1178783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1181283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1181283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1183783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1183783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1186783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1189283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1189283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1191783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1191783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1194283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1194283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1197283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1199783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1199783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1202283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1202283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1204783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1204783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1207783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1210283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1210283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1212783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1212783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1215283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1215283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1218283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1220783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1220783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1223283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1223283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1225783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1225783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1228783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1231283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1231283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1233783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1233783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1236283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1236283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1239283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1241783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1241783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1244283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1244283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1246783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1246783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1249783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1252283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1252283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1254783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1254783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1257283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1257283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1260283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1262783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1262783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1265283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1265283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1267783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1267783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1270783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1273283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1273283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1275783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1275783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1278283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1278283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1281283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1283783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1283783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1286283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1286283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1288783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1288783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1291783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1294283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1294283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1296783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1296783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1299283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1299283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1302283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1304783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1304783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1307283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1307283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1309783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1309783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1312783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1315283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1315283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1317783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1317783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1320283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1320283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1323283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1325783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1325783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1328283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1328283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1330783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1330783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1333783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1336283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1336283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1338783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1338783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1341283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1341283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1344283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1346783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1346783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1349283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1349283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1351783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1351783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1354783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1357283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1357283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1359783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1359783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1362283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1362283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1365283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1367783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1367783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1370283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1370283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1372783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1372783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1375783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1378283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1378283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1380783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1380783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1383283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1383283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1386283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1388783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1388783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1391283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1391283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1393783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1393783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1396783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1399283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1399283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1401783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1401783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1404283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1404283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1407283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1409783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1409783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1412283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1412283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1414783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1414783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1417783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1420283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1420283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1422783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1422783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1425283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1425283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1428283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1430783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1430783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1433283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1433283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1435783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1435783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1438783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1441283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1441283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1443783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1443783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1446283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1446283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1449283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1451783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1451783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1454283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1454283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1456783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1456783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1459783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1462283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1462283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1464783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1464783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1467283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1467283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1470283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1472783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1472783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1475283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1475283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1477783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1477783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1480783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1483283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1483283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1485783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1485783) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1488283) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1488283) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1491283) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1493783) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1493783) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1496283) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1496283) LAB1_RGB_TIMING: Phase B: ON[0m
+[0;32mI (1498783) LAB1_RGB_TIMING: Phase B: OFF[0m
+[0;32mI (1498783) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.[0m
+-----------------------------------------------------------
+[0;32mI (1501783) LAB1_RGB_TIMING: Phase R: ON[0m
+[0;32mI (1504283) LAB1_RGB_TIMING: Phase R: OFF[0m
+[0;32mI (1504283) LAB1_RGB_TIMING: Phase G: ON[0m
+[0;32mI (1506783) LAB1_RGB_TIMING: Phase G: OFF[0m
+[0;32mI (1506783) LAB1_RGB_TIMING: Phase B: ON[0m
