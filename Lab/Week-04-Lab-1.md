@@ -223,6 +223,4 @@ idf_component_register(SRCS "main.c"
 
 
 #### 4.2 จากการสังเกตุ LED 
-
-LED สว่างเริ่มที่แดงเขียวน้ำเงินละก็ดับพักไป วนไปสีแดงใหม่
-
+https://drive.google.com/file/d/1tZIvRTQ9w2geF1ji_ijmSNtfO8VqJgwd/view?usp=drive_link
