@@ -30,6 +30,12 @@ I (28778) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to
 
 
 ### บันทึกผลการทดลอง การทดลองย่อยที่ 2
+**ตารางกราฟ**
+![[Pasted image 20260720114600.png]]
+
+![[Pasted image 20260720114625.png]]
+
+![[Pasted image 20260720114638.png]]
 ### ✍️ กิจกรรมวิเคราะห์ผลและการบ้านท้ายใบงาน (Data Science & Engineering Reflection)
 
 1. **การพล็อตพฤติกรรมทางกายภาพ (Transient Response Curve):**
