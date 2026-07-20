@@ -130,8 +130,80 @@ void app_main(void)
         printf("-----------------------------------------------------------\n");
     }
 }
-```
 
+```
+```
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+
+static const char *TAG = "LAB1_RGB_TIMING";
+
+// กำหนดขา GPIO Safe Pins
+#define LED_R_GPIO        GPIO_NUM_4
+#define LED_G_GPIO        GPIO_NUM_5
+#define LED_B_GPIO        GPIO_NUM_18
+
+#define TIME_ACTIVE_MS    2500  // สลับติด-ดับทุกๆ 2.5 วินาที
+#define TIME_REST_MS      3000  // เว้นระยะพักรอบ 3 วินาที
+
+// ลอจิกสำหรับ Common Anode (+5V)
+#define LED_ON            0     // ดึง 0V เพื่อให้ไฟไหล
+#define LED_OFF           1     // ตัดกระแสเพื่อปิดไฟ
+
+void init_rgb_gpio(void)
+{
+    gpio_config_t io_conf = {
+        .pin_bit_mask = (1ULL << LED_R_GPIO) | (1ULL << LED_G_GPIO) | (1ULL << LED_B_GPIO),
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE
+    };
+    gpio_config(&io_conf);
+
+    // เริ่มต้นให้ดับทุกสี
+    gpio_set_level(LED_R_GPIO, LED_OFF);
+    gpio_set_level(LED_G_GPIO, LED_OFF);
+    gpio_set_level(LED_B_GPIO, LED_OFF);
+}
+
+void app_main(void)
+{
+    init_rgb_gpio();
+    ESP_LOGI(TAG, "RGB LED System Started (Pins: 4, 5, 18).");
+
+    while (1) {
+        // Red Phase
+        ESP_LOGI(TAG, "Phase R (GPIO 4): ON");
+        gpio_set_level(LED_R_GPIO, LED_ON);
+        vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
+        gpio_set_level(LED_R_GPIO, LED_OFF);
+        ESP_LOGI(TAG, "Phase R (GPIO 4): OFF");
+
+        // Green Phase
+        ESP_LOGI(TAG, "Phase G (GPIO 5): ON");
+        gpio_set_level(LED_G_GPIO, LED_ON);
+        vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
+        gpio_set_level(LED_G_GPIO, LED_OFF);
+        ESP_LOGI(TAG, "Phase G (GPIO 5): OFF");
+
+        // Blue Phase
+        ESP_LOGI(TAG, "Phase B (GPIO 18): ON");
+        gpio_set_level(LED_B_GPIO, LED_ON);
+        vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
+        gpio_set_level(LED_B_GPIO, LED_OFF);
+        ESP_LOGI(TAG, "Phase B (GPIO 18): OFF");
+
+        // Rest Phase
+        ESP_LOGI(TAG, "Entering Rest Phase...");
+        vTaskDelay(pdMS_TO_TICKS(TIME_REST_MS)); 
+        
+        printf("-----------------------------------------------------------\n");
+    }
+}
 #### 3.2 ไฟล์ `main/CMakeLists.txt`
 
 เพื่อลงทะเบียนระบบพอร์ตและ GPIO ให้โปรเจกต์คอมไพล์ผ่านอย่างถูกต้อง แนะนำให้นักศึกษาใช้โครงสร้าง CMake พื้นฐานดังนี้
