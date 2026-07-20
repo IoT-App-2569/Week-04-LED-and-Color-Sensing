@@ -56,75 +56,64 @@
 
 static const char *TAG = "LAB1_RGB_TIMING";
 
-// กำหนดขา GPIO ตามผังวงจร
+// กำหนดขา GPIO Safe Pins
 #define LED_R_GPIO        GPIO_NUM_4
 #define LED_G_GPIO        GPIO_NUM_5
-#define LED_B_GPIO        GPIO_NUM_6
+#define LED_B_GPIO        GPIO_NUM_18
 
-// กำหนดเวลาหน่วง (หน่วยมิลลิวินาที) ตามเงื่อนไขของใบงาน
 #define TIME_ACTIVE_MS    2500  // สลับติด-ดับทุกๆ 2.5 วินาที
-#define TIME_REST_MS      3000  // เว้นระยะพักรอบวงลูป 3 วินาที
+#define TIME_REST_MS      3000  // เว้นระยะพักรอบ 3 วินาที
+
+// ลอจิกสำหรับ Common Anode (+5V)
+#define LED_ON            0     // ดึง 0V เพื่อให้ไฟไหล
+#define LED_OFF           1     // ตัดกระแสเพื่อปิดไฟ
 
 void init_rgb_gpio(void)
 {
-    // โครงสร้างการตั้งค่าขา GPIO สไตล์ ESP-IDF ธรรมดา
     gpio_config_t io_conf = {
         .pin_bit_mask = (1ULL << LED_R_GPIO) | (1ULL << LED_G_GPIO) | (1ULL << LED_B_GPIO),
-        .mode = GPIO_MODE_OUTPUT,              // ตั้งเป็นขา Output
+        .mode = GPIO_MODE_OUTPUT,
         .pull_up_en = GPIO_PULLUP_DISABLE,
         .pull_down_en = GPIO_PULLDOWN_DISABLE,
         .intr_type = GPIO_INTR_DISABLE
     };
     gpio_config(&io_conf);
 
-    // เริ่มต้นให้ LED ทุกสีดับสนิท
-    gpio_set_level(LED_R_GPIO, 0);
-    gpio_set_level(LED_G_GPIO, 0);
-    gpio_set_level(LED_B_GPIO, 0);
+    // เริ่มต้นให้ดับทุกสี
+    gpio_set_level(LED_R_GPIO, LED_OFF);
+    gpio_set_level(LED_G_GPIO, LED_OFF);
+    gpio_set_level(LED_B_GPIO, LED_OFF);
 }
 
 void app_main(void)
 {
     init_rgb_gpio();
-    ESP_LOGI(TAG, "RGB LED Timing System Started.");
+    ESP_LOGI(TAG, "RGB LED System Started (Pins: 4, 5, 18).");
 
     while (1) {
-        // -----------------------------------------------------------
-        // เฟสที่ 1: จ่ายแสงสีแดง (Red Phase)
-        // -----------------------------------------------------------
-        ESP_LOGI(TAG, "Phase R: ON");
-        gpio_set_level(LED_R_GPIO, 1);
+        // Red Phase
+        ESP_LOGI(TAG, "Phase R (GPIO 4): ON");
+        gpio_set_level(LED_R_GPIO, LED_ON);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
-        
-        gpio_set_level(LED_R_GPIO, 0);
-        ESP_LOGI(TAG, "Phase R: OFF");
+        gpio_set_level(LED_R_GPIO, LED_OFF);
+        ESP_LOGI(TAG, "Phase R (GPIO 4): OFF");
 
-        // -----------------------------------------------------------
-        // เฟสที่ 2: จ่ายแสงสีเขียว (Green Phase)
-        // -----------------------------------------------------------
-        ESP_LOGI(TAG, "Phase G: ON");
-        gpio_set_level(LED_G_GPIO, 1);
+        // Green Phase
+        ESP_LOGI(TAG, "Phase G (GPIO 5): ON");
+        gpio_set_level(LED_G_GPIO, LED_ON);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
-        
-        gpio_set_level(LED_G_GPIO, 0);
-        ESP_LOGI(TAG, "Phase G: OFF");
+        gpio_set_level(LED_G_GPIO, LED_OFF);
+        ESP_LOGI(TAG, "Phase G (GPIO 5): OFF");
 
-        // -----------------------------------------------------------
-        // เฟสที่ 3: จ่ายแสงสีน้ำเงิน (Blue Phase)
-        // -----------------------------------------------------------
-        ESP_LOGI(TAG, "Phase B: ON");
-        gpio_set_level(LED_B_GPIO, 1);
+        // Blue Phase
+        ESP_LOGI(TAG, "Phase B (GPIO 18): ON");
+        gpio_set_level(LED_B_GPIO, LED_ON);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
-        
-        gpio_set_level(LED_B_GPIO, 0);
-        ESP_LOGI(TAG, "Phase B: OFF");
+        gpio_set_level(LED_B_GPIO, LED_OFF);
+        ESP_LOGI(TAG, "Phase B (GPIO 18): OFF");
 
-        // -----------------------------------------------------------
-        // เฟสที่ 4: ระยะพักระบบ (Rest Phase / Discharge Window)
-        // -----------------------------------------------------------
-        ESP_LOGI(TAG, "Entering Rest Phase... Waiting for residual charge to dissipate.");
-        
-        // หน่วงเวลาพักระบบ 3 วินาทีก่อนกลับไปเริ่มสีแดงใหม่
+        // Rest Phase
+        ESP_LOGI(TAG, "Entering Rest Phase...");
         vTaskDelay(pdMS_TO_TICKS(TIME_REST_MS)); 
         
         printf("-----------------------------------------------------------\n");
@@ -147,11 +136,11 @@ idf_component_register(SRCS "main.c"
 
 #### 4.1 จาก `idf.py monitor` 
 
-```
 
+![[Pasted image 20260720101634.png]]
 
-```
 
 #### 4.2 จากการสังเกตุ LED 
 
+จะเริ่มต้นจากสีแดงกระพริบเป็นเขียวแล้วก็กระพริบน้ำเงิน แล้วดับไปแล้ว แล้วกลับมาแดงอีกครั้งวนไปเรื่อย ๆ 
 
