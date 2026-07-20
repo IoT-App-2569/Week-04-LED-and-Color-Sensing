@@ -1,11 +1,12 @@
-# ผลลัพธ์ Lab01
+# ผลลัพธ์  Lab01
+### ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่ 1
+
 ### 4.  บันทึกผลการทดลอง 
 
 #### 4.1 จาก `idf.py monitor` 
 
 ```
 ----------------------------------------------------------- I (10773) LAB1_RGB_TIMING: Phase R: ON I (13273) LAB1_RGB_TIMING: Phase R: OFF I (13273) LAB1_RGB_TIMING: Phase G: ON I (15773) LAB1_RGB_TIMING: Phase G: OFF I (15773) LAB1_RGB_TIMING: Phase B: ON I (18273) LAB1_RGB_TIMING: Phase B: OFF I (18273) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I (21273) LAB1_RGB_TIMING: Phase R: ON I (23773) LAB1_RGB_TIMING: Phase R: OFF I (23773) LAB1_RGB_TIMING: Phase G: ON I (26273) LAB1_RGB_TIMING: Phase G: OFF I (26273) LAB1_RGB_TIMING: Phase B: ON I (28773) LAB1_RGB_TIMING: Phase B: OFF I (28773) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. -----------------------------------------------------------
-
 ```
 
 #### 4.2 จากการสังเกตุ LED 
@@ -14,8 +15,16 @@ LED จะติดดับสลับกันทีละสีดวงล�
 วิดิโอผลลัพธ์ https://drive.google.com/file/d/1cGrxciif7ZPFwk2nysaIGlaaulBCPnI9/view?usp=sharing
 
 
-
+___
 # ผลลัพธ์ Lab02
+### ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่ 1
+#### หัวข้อ  การศึกษากลศาสตร์ประจุแฝงและพฤติกรรมการตอบสนองของ ADC (ADC Settling Time & Transient State)
 
 
+___
 # ผลลัพธ์ Lab03
+### ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่  3
+### หัวข้อ: การประมวลผลสัญญาณเชิงสถิติและการแปลงข้อมูลสู่โลกดิจิทัล (Robust Statistical Filtering)
+
+
+___ 
