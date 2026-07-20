@@ -4,6 +4,8 @@
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "esp_adc/adc_oneshot.h"
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
 
 static const char *TAG = "LAB2_ADC_SETTLING";
 
@@ -12,14 +14,76 @@ static const char *TAG = "LAB2_ADC_SETTLING";
 #define TX_LED_G_GPIO        GPIO_NUM_5
 #define TX_LED_B_GPIO        GPIO_NUM_23
 
-// กำหนดขาภาครับอนาล็อก (ESP32-C6: ADC1_CH2 คือ GPIO2)
-#define RX_ADC_UNIT          ADC_UNIT_1
-#define RX_ADC_CHANNEL       ADC_CHANNEL_2
+// ============================================================================
+// กำหนดขาภาครับอนาล็อก (RX ADC Pin Configuration)
+// ============================================================================
+// หมายเหตุสำหรับบอร์ด ESP32 (WROOM-32 / DevKit v1):
+// - หากเสียบสายที่ขา GPIO 2  (ตามใบงาน): บน ESP32 ต้องใช้ ADC_UNIT_2 + ADC_CHANNEL_2
+// - หากเสียบสายที่ขา GPIO 34 (ขาแนะนำ):   ต้องใช้ ADC_UNIT_1 + ADC_CHANNEL_6
+// (ตั้งค่า USE_GPIO_2 เป็น 1 หากต่อสายที่ GPIO2 หรือเป็น 0 หากต่อที่ GPIO34)
+#define USE_GPIO_2           1   
+
+#if USE_GPIO_2
+    #define RX_ADC_UNIT          ADC_UNIT_2
+    #define RX_ADC_CHANNEL       ADC_CHANNEL_2  // บน ESP32 Classic: GPIO 2 คือ ADC2_CHANNEL_2
+    #define RX_GPIO_NUM_STR      "GPIO 2 (ADC2_CH2)"
+#else
+    #define RX_ADC_UNIT          ADC_UNIT_1
+    #define RX_ADC_CHANNEL       ADC_CHANNEL_6  // บน ESP32 Classic: GPIO 34 คือ ADC1_CHANNEL_6
+    #define RX_GPIO_NUM_STR      "GPIO 34 (ADC1_CH6)"
+#endif
 
 #define NUM_SAMPLES          20
 #define SAMPLING_DELAY_MS    150   // 3000ms / 20 samples = 150ms
 
-void init_hardware(adc_oneshot_unit_handle_t *adc_handle)
+// ฟังก์ชันเปิดการทำงานระบบคาร์ลิเบรท ADC (ADC Calibration)
+static bool init_adc_calibration(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle)
+{
+    adc_cali_handle_t handle = NULL;
+    esp_err_t ret = ESP_FAIL;
+    bool calibrated = false;
+
+#if ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
+    if (!calibrated) {
+        ESP_LOGI(TAG, "Calibration scheme: Line Fitting");
+        adc_cali_line_fitting_config_t cali_config = {
+            .unit_id = unit,
+            .atten = atten,
+            .bitwidth = ADC_BITWIDTH_DEFAULT,
+        };
+        ret = adc_cali_create_scheme_line_fitting(&cali_config, &handle);
+        if (ret == ESP_OK) {
+            calibrated = true;
+        }
+    }
+#endif
+
+#if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
+    if (!calibrated) {
+        ESP_LOGI(TAG, "Calibration scheme: Curve Fitting");
+        adc_cali_curve_fitting_config_t cali_config = {
+            .unit_id = unit,
+            .chan = channel,
+            .atten = atten,
+            .bitwidth = ADC_BITWIDTH_DEFAULT,
+        };
+        ret = adc_cali_create_scheme_curve_fitting(&cali_config, &handle);
+        if (ret == ESP_OK) {
+            calibrated = true;
+        }
+    }
+#endif
+
+    *out_handle = handle;
+    if (calibrated) {
+        ESP_LOGI(TAG, "ADC Calibration Init Success.");
+    } else {
+        ESP_LOGW(TAG, "ADC Calibration scheme not supported, falling back to raw readings.");
+    }
+    return calibrated;
+}
+
+void init_hardware(adc_oneshot_unit_handle_t *adc_handle, adc_cali_handle_t *cali_handle, bool *is_calibrated)
 {
     // 1. ตั้งค่าขาเอาต์พุตดิจิทัลสำหรับควบคุม LED RGB
     gpio_config_t io_conf = {
@@ -36,7 +100,7 @@ void init_hardware(adc_oneshot_unit_handle_t *adc_handle)
     gpio_set_level(TX_LED_G_GPIO, 0);
     gpio_set_level(TX_LED_B_GPIO, 0);
 
-    // 2. ตั้งค่าหน่วย ADC Unit 1 ธรรมดา (ไม่มีการ Calibrate เพื่อดูบิตดิบ)
+    // 2. ตั้งค่าหน่วย ADC Unit 1
     adc_oneshot_unit_init_cfg_t init_config = {
         .unit_id = RX_ADC_UNIT,
         .clk_src = ADC_DIGI_CLK_SRC_DEFAULT,
@@ -49,6 +113,9 @@ void init_hardware(adc_oneshot_unit_handle_t *adc_handle)
         .atten = ADC_ATTEN_DB_12, // รองรับช่วงระดับแรงดันเต็มพิกัด 3.3V
     };
     ESP_ERROR_CHECK(adc_oneshot_config_channel(*adc_handle, RX_ADC_CHANNEL, &chan_config));
+
+    // 4. เริ่มต้นระบบ ADC Calibration
+    *is_calibrated = init_adc_calibration(RX_ADC_UNIT, RX_ADC_CHANNEL, chan_config.atten, cali_handle);
 }
 
 // ฟังก์ชันจำลองวงจรอ่านค่าดิบแบบอนุกรมเวลาในช่วงสลับสีไฟ
@@ -72,9 +139,12 @@ void sample_and_print(adc_oneshot_unit_handle_t adc_handle, const char* phase_na
 void app_main(void)
 {
     adc_oneshot_unit_handle_t adc1_handle;
-    init_hardware(&adc1_handle);
+    adc_cali_handle_t adc1_cali_handle = NULL;
+    bool is_calibrated = false;
 
-    ESP_LOGI(TAG, "Transient Observation System Online.");
+    init_hardware(&adc1_handle, &adc1_cali_handle, &is_calibrated);
+
+    ESP_LOGI(TAG, "Transient Observation System Online (Calibrated) on %s", RX_GPIO_NUM_STR);
     printf("==============================================================\n");
 
     while (1) {
