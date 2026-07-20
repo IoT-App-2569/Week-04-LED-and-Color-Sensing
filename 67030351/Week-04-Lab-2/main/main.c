@@ -152,21 +152,21 @@ void app_main(void)
         gpio_set_level(TX_LED_R_GPIO, 0);
         vTaskDelay(pdMS_TO_TICKS(2500)); // เปล่งแสงนาน 2.5 วินาที
         gpio_set_level(TX_LED_R_GPIO, 1); // ดับไฟเข้าสู่จังหวะพัก (Rest Phase)
-        sample_and_print(adc1_handle, "R");
+        sample_and_print(adc1_handle, adc1_cali_handle, is_calibrated, "R");
         printf("--------------------------------------------------------------\n");
 
         // --- รอบไฟสีเขียว ---
         gpio_set_level(TX_LED_G_GPIO, 0);
         vTaskDelay(pdMS_TO_TICKS(2500)); 
         gpio_set_level(TX_LED_G_GPIO, 1); 
-        sample_and_print(adc1_handle, "G");
+        sample_and_print(adc1_handle, adc1_cali_handle, is_calibrated, "G");
         printf("--------------------------------------------------------------\n");
 
         // --- รอบไฟสีน้ำเงิน ---
         gpio_set_level(TX_LED_B_GPIO, 0);
         vTaskDelay(pdMS_TO_TICKS(2500)); 
         gpio_set_level(TX_LED_B_GPIO, 1); 
-        sample_and_print(adc1_handle, "B");
+        sample_and_print(adc1_handle, adc1_cali_handle, is_calibrated, "B");
         printf("==============================================================\n");
     }
 }
