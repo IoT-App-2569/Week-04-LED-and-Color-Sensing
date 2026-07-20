@@ -93,9 +93,9 @@ No, ADC Raw
 
 ##### 4.1 การพล็อตกราฟพฤติกรรมทางกายภาพ (Transient Response Curve)
 * **ตารางสรุปไฟล์ข้อมูลทั้งหมด**: <br>
-![alt text](image/image-3.png)
-![alt text](image/image-1.png)
-![alt text](image/image-2.png)
+![alt text](image/image-3.png)  <br>
+![alt text](image/image-1.png)  <br>
+![alt text](image/image-2.png)  <br>
 
 ##### 4.2 คำถามนำเพื่อการวิเคราะห์เชิงระบบ (Critical Thinking)
 
