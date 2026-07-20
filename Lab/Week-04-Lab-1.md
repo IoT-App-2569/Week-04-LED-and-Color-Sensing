@@ -141,7 +141,8 @@ idf_component_register(SRCS "main.c"
 ### 4.  บันทึกผลการทดลอง 
 
 #### 4.1 จาก `idf.py monitor` 
-![[Pasted image 20260720100652.png]]
+```
+```
 
 #### 4.2 จากการสังเกตุ LED 
-https://youtube.com/shorts/BDVmfTSnCWI?si=qIxMIWpnXd7kApya
+
