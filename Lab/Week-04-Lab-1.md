@@ -170,11 +170,31 @@ idf_component_register(SRCS "main.c"
 
 #### 4.1 จาก `idf.py monitor` 
 
-```
-
-
+```text
+-----------------------------------------------------------
+I (136770) LAB1_RGB_TIMING: Phase R: ON
+I (139270) LAB1_RGB_TIMING: Phase R: OFF
+I (139270) LAB1_RGB_TIMING: Phase G: ON
+I (141770) LAB1_RGB_TIMING: Phase G: OFF
+I (141770) LAB1_RGB_TIMING: Phase B: ON
+I (144270) LAB1_RGB_TIMING: Phase B: OFF
+I (144270) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (147270) LAB1_RGB_TIMING: Phase R: ON
+I (149770) LAB1_RGB_TIMING: Phase R: OFF
+I (149770) LAB1_RGB_TIMING: Phase G: ON
+I (152270) LAB1_RGB_TIMING: Phase G: OFF
+I (152270) LAB1_RGB_TIMING: Phase B: ON
+I (154770) LAB1_RGB_TIMING: Phase B: OFF
+I (154770) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
 ```
 
 #### 4.2 จากการสังเกตุ LED 
 
+จากการสังเกตการทำงานของหลอดไฟ RGB LED พบว่าเมื่อโปรแกรมเริ่มทำงาน หลอดไฟจะแสดงสีสลับกันตามลำดับดังนี้:
+1. **หลอดไฟแสดงสีแดง (Red Phase)** เป็นเวลา 2.5 วินาที แล้วดับลง
+2. **หลอดไฟแสดงสีเขียว (Green Phase)** เป็นเวลา 2.5 วินาที แล้วดับลง
+3. **หลอดไฟแสดงสีน้ำเงิน (Blue Phase)** เป็นเวลา 2.5 วินาที แล้วดับลง
+4. **เข้าสู่ช่วงพักระบบ (Rest Phase)** หลอดไฟทุกดวงดับสนิทเป็นเวลา 3 วินาที
 
+เมื่อผ่านช่วงพักระบบไปแล้ว ลูปจะวนกลับไปเริ่มต้นที่สีแดงใหม่อีกครั้งอย่างต่อเนื่องตรงกับเวลาที่แสดงบน Serial Monitor นอกจากนี้จากการทดลองทำให้ทราบว่า LED ที่ใช้เป็นชนิด Common Anode จึงต้องใช้ลอจิก 0 เพื่อสั่งให้ไฟติด
