@@ -166,6 +166,8 @@ idf_component_register(SRCS "main.c"
     ![alt text](image-1.png)
 
     ![alt text](image-2.png)
+
+    LINK : https://youtube.com/shorts/4PkjLg1GmQ0?si=rs8lGNxZ5AmBLZid
     
 2. **คำถามนำเพื่อการวิเคราะห์เชิงระบบ (Critical Thinking):**
     

@@ -168,6 +168,8 @@ idf_component_register(SRCS "main.c"
 
 ### 4.  บันทึกผลการทดลอง 
 
+ LINK : https://youtube.com/shorts/nJjBurTb2pA?si=AHgbbaQfuL_Oo248
+
 #### 4.1 จาก `idf.py monitor` 
 
 ```

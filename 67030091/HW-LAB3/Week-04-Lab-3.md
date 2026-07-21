@@ -235,6 +235,9 @@ Color B, n = 40 (filtered), mean = 366.00, sd = 12.00
 
 
     #### เอาต์พุตที่ได้
+
+   LINK :  https://youtube.com/shorts/mzsfhitdLAg?si=BPLNynzpt3uQlwpn
+
 ```
 ==============================================================
 Color R, n = 40 (filtered), mean = 198.00, sd = 20.00
@@ -258,7 +261,7 @@ Color G, n = 40 (filtered), mean = 182.00, sd = 5.00
 Color B, n = 40 (filtered), mean = 183.00, sd = 9.00
 --------------------------------------------------------------
 ```
-
+![alt text](image.png)
     
 2. **คำถามเชิงวิเคราะห์ (Engineering Evaluation):**
     
