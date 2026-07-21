@@ -179,7 +179,6 @@ I (183770) LAB1_RGB_TIMING: Phase B: ON
 I (185770) LAB1_RGB_TIMING: Phase B: OFF
 I (186270) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
 
-
 ```
 
 #### 4.2 จากการสังเกตุ LED 

@@ -1,1 +1,35 @@
+# ===== Obsidian =====
 .obsidian/**
+
+# ===== ESP-IDF build artifacts =====
+build/
+managed_components/
+dependencies.lock
+sdkconfig
+sdkconfig.old
+!sdkconfig.defaults
+
+# ===== ESP-IDF project metadata =====
+.vscode/
+compile_commands.json
+.mypy_cache/
+
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ===== Python (ถ้ามีสคริปต์ช่วย/venv) =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ===== Editor / IDE ทั่วไป =====
+.idea/
+*.swp
+*.swo
+
+# ===== Logs / temp =====
+*.log
+*.tmp
