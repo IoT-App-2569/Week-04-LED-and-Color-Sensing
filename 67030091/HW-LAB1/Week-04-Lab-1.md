@@ -168,6 +168,8 @@ idf_component_register(SRCS "main.c"
 
 ### 4.  บันทึกผลการทดลอง 
 
+ LINK : https://youtube.com/shorts/nJjBurTb2pA?si=AHgbbaQfuL_Oo248
+
 #### 4.1 จาก `idf.py monitor` 
 
 ```
@@ -178,7 +180,6 @@ I (183270) LAB1_RGB_TIMING: Phase G: OFF
 I (183770) LAB1_RGB_TIMING: Phase B: ON
 I (185770) LAB1_RGB_TIMING: Phase B: OFF
 I (186270) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
-
 
 ```
 
