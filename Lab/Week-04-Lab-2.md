@@ -170,4 +170,8 @@ idf_component_register(SRCS "main.c"
         
     - หากในใบงานถัดไปเราต้องการ "หาค่าเฉลี่ยของระดับแรงดันสะท้อนที่แท้จริง" โดยไม่ให้เฟสสัญญาณที่กำลังเปลี่ยนแปลง (Transient State) นี้ไปดึงค่าสถิติให้เพี้ยน นักศึกษาคิดว่าเราควรเลือกแซมเปิ้ลช่วงใดมาคำนวณ หรือควรเขียนโปรแกรมหน่วงเวลาหลบเลี่ยงอาการ Settling นี้อย่างไร?
 
+<img width="975" height="520" alt="image" src="https://github.com/user-attachments/assets/5ab3aa4a-ef8b-457d-a6c9-a29f67b54738" />
+
+<img width="1022" height="698" alt="image" src="https://github.com/user-attachments/assets/23e2eb70-421c-46fd-8de8-745d8137204a" />
+
 
