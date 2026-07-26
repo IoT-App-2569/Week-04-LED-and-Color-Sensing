@@ -1,6 +1,5 @@
 # ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่ 1
 
-
 ### หัวข้อ: การควบคุมจังหวะเวลาเอาต์พุตดิจิทัล (Time-Domain Multiplexing with RGB LED)
 
 ### 1. วัตถุประสงค์
@@ -171,10 +170,34 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+(126270) LAB1_RGB_TIMING: Phase R: ON I 
+(128770) LAB1_RGB_TIMING: Phase R: OFF I 
+(128770) LAB1_RGB_TIMING: Phase G: ON I 
+(131270) LAB1_RGB_TIMING: Phase G: OFF I 
+(131270) LAB1_RGB_TIMING: Phase B: ON I 
+(133770) LAB1_RGB_TIMING: Phase B: OFF I 
+(133770) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I 
+(136770) LAB1_RGB_TIMING: Phase R: ON I 
+(139270) LAB1_RGB_TIMING: Phase R: OFF I 
+(139270) LAB1_RGB_TIMING: Phase G: ON I 
+(141770) LAB1_RGB_TIMING: Phase G: OFF I 
+(141770) LAB1_RGB_TIMING: Phase B: ON I 
+(144270) LAB1_RGB_TIMING: Phase B: OFF I 
+(144270) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I 
+(147270) LAB1_RGB_TIMING: Phase R: ON I 
+(149770) LAB1_RGB_TIMING: Phase R: OFF I 
+(149770) LAB1_RGB_TIMING: Phase G: ON I 
+(152270) LAB1_RGB_TIMING: Phase G: OFF I 
+(152270) LAB1_RGB_TIMING: Phase B: ON I 
+(154770) LAB1_RGB_TIMING: Phase B: OFF I 
+(154770) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I 
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
 
+<img width="666" height="374" alt="image" src="https://github.com/user-attachments/assets/a298fe50-244f-44f4-a495-3bc382eda06e" />
 
+<img width="666" height="374" alt="image" src="https://github.com/user-attachments/assets/58e1707d-56e6-4cac-9302-f7b44266b43f" />
+
+<img width="666" height="374" alt="image" src="https://github.com/user-attachments/assets/b076c549-7ec2-4aaa-a4a8-e20bb80d6e77" />
