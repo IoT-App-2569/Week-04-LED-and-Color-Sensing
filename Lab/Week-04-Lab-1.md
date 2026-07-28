@@ -49,8 +49,7 @@ $I_{LED} = \frac {(V_s-V_{LED})}{R}$
 | น้ำเงิน | 3.0                              | ${(3.3-3.0)}/{470} = 0.64mA$ | $P=E \times I$ = $3.0V \times 0.64mA =1.92mW$ |
 
 
-
-![[common anode.svg]]
+![](../Images/common%20anode.svg)
 
 **รูปที่ 2** LED Common Anode
 
@@ -173,6 +172,8 @@ idf_component_register(SRCS "main.c"
 
 ```
 ![alt text](image-1.png)
+
+<img width="914" height="514" alt="image" src="https://github.com/user-attachments/assets/39d095a4-5634-4917-8e74-95f57887fe21" />
 
 ```
 
