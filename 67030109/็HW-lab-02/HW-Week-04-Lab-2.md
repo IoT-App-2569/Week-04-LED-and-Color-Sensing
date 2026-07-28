@@ -180,9 +180,9 @@ idf_component_register(SRCS "main.c"
 		    การเขียนโปรแกรมหลบเลี่ยง
 			-  Settling Delay เพิ่มคำสั่งหน่วงเวลา เช่น `delay()` หรือ `delayMicroseconds()` หลังจากสลับสถานะไฟ LED เพื่อรอให้แรงดันนิ่งเข้าสู่ Steady State ก่อนเริ่มคำสั่ง `analogRead()`
 			- Dummy Read ทำการสั่ง `analogRead()` ทิ้งเปล่าๆ 2–3 ครั้งแรกทันทีหลังสลับสถานะ เพื่อช่วยชาร์จประจุให้ตัวเก็บประจุ $C_{\text{sample}}$ ภายใน ADC นิ่งก่อนเริ่มเก็บข้อมูลจริง
-			- 
-[Lab 2 - การศึกษากลศาสตร์ประจุแฝงและพฤติกรรมการตอบสนองของ ADC 116 , 109](https://www.youtube.com/shorts/z9Im7NXZ7bs)
-    
+
+### youtube
 https://www.youtube.com/watch?v=2kRj46oHDgw&feature=youtu.be
+https://www.youtube.com/shorts/z9Im7NXZ7bs
 
 

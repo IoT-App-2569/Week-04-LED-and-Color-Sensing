@@ -171,7 +171,10 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 ----------------------------------------------------------- I (220784) LAB1_RGB_TIMING: Phase R: ON I (223284) LAB1_RGB_TIMING: Phase R: OFF I (223284) LAB1_RGB_TIMING: Phase G: ON I (225784) LAB1_RGB_TIMING: Phase G: OFF I (225784) LAB1_RGB_TIMING: Phase B: ON I (228284) LAB1_RGB_TIMING: Phase B: OFF I (228284) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. -----------------------------------------------------------
 
-[Lab 1 - การควบคุมจังหวะเวลาเอาต์พุตดิจิทัล (Time-Domain Multiplexing with RGB LED) 116 , 109](https://www.youtube.com/watch?v=3QUJv7bA0dM)
+### youtube
+[Lab 1 - การควบคุมจังหวะเวลาเอาต์พุตดิจิทัล (Time-Domain Multiplexing with RGB LED) 116 , 109]
+(https://www.youtube.com/watch?v=3QUJv7bA0dM)
+
 #### 4.2 จากการสังเกตุ LED 
 
 
