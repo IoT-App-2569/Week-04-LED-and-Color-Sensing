@@ -171,7 +171,7 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+<img width="914" height="514" alt="image" src="https://github.com/user-attachments/assets/39d095a4-5634-4917-8e74-95f57887fe21" />
 
 ```
 
