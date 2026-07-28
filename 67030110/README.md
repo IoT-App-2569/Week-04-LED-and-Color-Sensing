@@ -2,7 +2,8 @@
 
 ### ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่ 1
 #### 4.1 จาก `idf.py monitor` 
-![[Pasted image 20260721110029.png|591]]
+<img width="1470" height="813" alt="image" src="https://github.com/user-attachments/assets/a60e1374-5b87-485a-8905-29d10c3fea05" />
+
 #### 4.2 จากการสังเกตุ LED 
 https://youtube.com/shorts/hTC2e3rbscI?si=Vayp_zLQj4avYeT5
 
