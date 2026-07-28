@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/CMakeFiles/bootloader
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/CMakeFiles/bootloader.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/CMakeFiles/bootloader-complete.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/T.Koson/Week-04-LED-and-Color-Sensing/Lab/Lab1-RGB-Timing/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

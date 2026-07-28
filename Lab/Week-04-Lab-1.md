@@ -172,10 +172,10 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+![alt text](image-1.png)
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
 
-
+https://youtu.be/2kRj46oHDgw
