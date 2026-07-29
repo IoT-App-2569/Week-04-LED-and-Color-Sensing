@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/CMakeFiles/bootloader
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/CMakeFiles/bootloader.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/CMakeFiles/bootloader-complete.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/Thanu/Week-04-LED-and-Color-Sensing/67030085/Week-04-Lab-3/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
