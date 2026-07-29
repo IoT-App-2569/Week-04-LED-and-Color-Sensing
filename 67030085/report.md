@@ -19,11 +19,13 @@ https://youtu.be/LGf8UrKwqNs
 
 ##### 4.1 การพล็อตกราฟพฤติกรรมทางกายภาพ (Transient Response Curve)
 * **ตารางสรุปไฟล์ข้อมูลทั้งหมด**: <br>
-![[276371.jpg|525]]
 
-![[276372.jpg|526]]
+<img width="1196" height="742" alt="276371" src="https://github.com/user-attachments/assets/362335ad-1ff1-4314-a540-75fd406717e8" />
 
-![[276373.jpg|533]]
+<img width="1390" height="856" alt="276372" src="https://github.com/user-attachments/assets/be950ced-9236-4a53-990d-fa0f24f1d702" />
+
+<img width="1204" height="744" alt="276373" src="https://github.com/user-attachments/assets/828966eb-421f-43c8-810d-e5d3ff352832" />
+
 
 ##### 4.2 คำถามนำเพื่อการวิเคราะห์เชิงระบบ (Critical Thinking)
 
