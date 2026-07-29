@@ -4,7 +4,7 @@
 
 #### จาก `idf.py monitor` 
 
-![[Screenshot 2026-07-21 121642.png]]
+<img width="1037" height="537" alt="Screenshot 2026-07-21 121805" src="https://github.com/user-attachments/assets/5e07ede2-b0ba-4407-95be-f74daa620983" />
 
 #### 4.2 จากการสังเกตุ LED 
 
