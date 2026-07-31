@@ -1,1 +1,15 @@
 .obsidian/**
+
+# ESP-IDF
+**/build/
+**/sdkconfig
+**/sdkconfig.old
+**/dependencies.lock
+**/managed_components/
+
+# VSCode
+**/.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
