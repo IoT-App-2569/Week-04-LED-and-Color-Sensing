@@ -1,0 +1,10 @@
+Command: C:\Users\Victus\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\Victus\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\Week-04-LED-and-Color-Sensing\LAB2\build\LAB2.elf D:\Week-04-LED-and-Color-Sensing\LAB2\build\bootloader\bootloader.elf --force-color -m 'C:\Users\Victus\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\Victus\esp\v5.5.1\esp-idf\tools\idf.py' '-p' 'COM5'
+v:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,l�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x7 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
