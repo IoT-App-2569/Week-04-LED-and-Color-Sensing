@@ -1,4 +1,4 @@
-# ✍️ กิจกรรมวิเคราะห์ผลและการบ้านท้ายใบงาน (Data Science & Engineering Reflection)
+# กิจกรรมวิเคราะห์ผลและการบ้านท้ายใบงาน (Data Science & Engineering Reflection)
 
 ### 1. การพล็อตพฤติกรรมทางกายภาพ (Transient Response Curve)
 
