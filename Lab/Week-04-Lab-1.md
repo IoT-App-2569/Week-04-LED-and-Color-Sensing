@@ -171,10 +171,30 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+-----------------------------------------------------------
+I (136770) LAB1_RGB_TIMING: Phase R: ON
+I (139270) LAB1_RGB_TIMING: Phase R: OFF
+I (139270) LAB1_RGB_TIMING: Phase G: ON
+I (141770) LAB1_RGB_TIMING: Phase G: OFF
+I (141770) LAB1_RGB_TIMING: Phase B: ON
+I (144270) LAB1_RGB_TIMING: Phase B: OFF
+I (144270) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (147270) LAB1_RGB_TIMING: Phase R: ON
+I (149770) LAB1_RGB_TIMING: Phase R: OFF
+I (149770) LAB1_RGB_TIMING: Phase G: ON
+I (152270) LAB1_RGB_TIMING: Phase G: OFF
+I (152270) LAB1_RGB_TIMING: Phase B: ON
+I (154770) LAB1_RGB_TIMING: Phase B: OFF
+I (154770) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
+จากการสังเกตการทำงานของ RGB LED (ชนิด Common Anode) ผ่านหน้าจอ Serial Monitor (idf.py monitor) พบว่าระบบทำงานสลับสีตามลำดับเวลา (Timestamp) อย่างแม่นยำ โดยมีรายละเอียดดังนี้
+1. Red Phase: เริ่มต้นที่ 136770 ms ไฟสีแดงติดสว่าง และดับลงที่ 139270 ms (รวมเวลา 2.5 วินาที)
+2. Green Phase: เริ่มต้นที่ 139270 ms ไฟสีเขียวติดสว่าง และดับลงที่ 141770 ms (รวมเวลา 2.5 วินาที)
+3. Blue Phase: เริ่มต้นที่ 141770 ms ไฟสีน้ำเงินติดสว่าง และดับลงที่ 144270 ms (รวมเวลา 2.5 วินาที)
+4. Rest Phase: เข้าสู่ช่วงพักระบบที่ 144270 ms เพื่อรอให้ประจุค้าง dissipates จนถึง 147270 ms (ดับสนิทเป็นเวลา 3.0 วินาที)
 
-
+เมื่อครบช่วงพัก ระบบจะวนลูป (Loop) กลับมาเริ่มต้นแสดง Phase R: ON ใหม่อีกครั้งที่เวลา 147270 ms อย่างต่อเนื่อง
