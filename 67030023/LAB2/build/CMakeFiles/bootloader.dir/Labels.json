@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/kittikarnkaewnual/Week-04-LED-and-Color-Sensing/67030023/LAB2/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
