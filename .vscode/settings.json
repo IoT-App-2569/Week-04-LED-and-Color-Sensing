@@ -1,4 +1,5 @@
 {
     "stm32-for-vscode.openOCDPath": false,
-    "stm32-for-vscode.makePath": false
+    "stm32-for-vscode.makePath": false,
+    "idf.currentSetup": "C:\\Users\\Advice03\\esp\\v5.5.1\\esp-idf"
 }
