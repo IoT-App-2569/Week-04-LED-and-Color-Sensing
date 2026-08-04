@@ -169,12 +169,8 @@ idf_component_register(SRCS "main.c"
 ### 4.  บันทึกผลการทดลอง 
 
 #### 4.1 จาก `idf.py monitor` 
-
-```
-
-
-```
+![alt text](<Screenshot 2026-07-21 121855-1.png>)
 
 #### 4.2 จากการสังเกตุ LED 
-
+รอบเวลาและสเต็ปการทำงานถูกต้องเป๊ะครับ (ติด 2.5 วิ / พัก 3 วิ วนครบ Red $\rightarrow$ Green $\rightarrow$ Blue เสถียรดีมาก)
 
