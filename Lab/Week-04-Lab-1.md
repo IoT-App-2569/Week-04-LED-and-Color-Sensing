@@ -170,11 +170,16 @@ idf_component_register(SRCS "main.c"
 
 #### 4.1 จาก `idf.py monitor` 
 
-```
+``
+รูปภาพการทดลอง lab 1
+
+<img width="1631" height="572" alt="image" src="https://github.com/user-attachments/assets/ad7cd4c2-b8af-4afd-a295-de81693bc56d" />
 
 
-```
+``
 
 #### 4.2 จากการสังเกตุ LED 
 
+วีดิโอ youtube
+ลิ้ง
 
