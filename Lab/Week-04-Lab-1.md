@@ -171,10 +171,53 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
+(126270) LAB1_RGB_TIMING: Phase R: ON I  
 
+(128770) LAB1_RGB_TIMING: Phase R: OFF I  
+
+(128770) LAB1_RGB_TIMING: Phase G: ON I  
+
+(131270) LAB1_RGB_TIMING: Phase G: OFF I  
+
+(131270) LAB1_RGB_TIMING: Phase B: ON I  
+
+(133770) LAB1_RGB_TIMING: Phase B: OFF I  
+
+(133770) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I  
+
+(136770) LAB1_RGB_TIMING: Phase R: ON I  
+
+(139270) LAB1_RGB_TIMING: Phase R: OFF I  
+
+(139270) LAB1_RGB_TIMING: Phase G: ON I  
+
+(141770) LAB1_RGB_TIMING: Phase G: OFF I  
+
+(141770) LAB1_RGB_TIMING: Phase B: ON I  
+
+(144270) LAB1_RGB_TIMING: Phase B: OFF I  
+
+(144270) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I  
+
+(147270) LAB1_RGB_TIMING: Phase R: ON I  
+
+(149770) LAB1_RGB_TIMING: Phase R: OFF I  
+
+(149770) LAB1_RGB_TIMING: Phase G: ON I  
+
+(152270) LAB1_RGB_TIMING: Phase G: OFF I  
+
+(152270) LAB1_RGB_TIMING: Phase B: ON I  
+
+(154770) LAB1_RGB_TIMING: Phase B: OFF I  
+
+(154770) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. ----------------------------------------------------------- I
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
+ลำดับการสลับสี: RGB LED สว่างสลับทีละสีตามลำดับ สีแดง (Red) $\rightarrow$ สีเขียว (Green) $\rightarrow$ สีน้ำเงิน (Blue) โดยแต่ละสีจะสว่างค้างไว้เป็นเวลา 2.5 วินาที แล้วดับลง
+ระยะพักระบบ (Rest Phase): หลังจากสีน้ำเงินดับลง หลอด LED ทุกสีจะดับสนิทพร้อมกันเป็นเวลา 3 วินาที เพื่อเว้นระยะพักรอบ ก่อนจะวนกลับไปเริ่มต้นสว่างที่สีแดงใหม่อีกครั้งเป็นลูปต่อเนื่อง
+สถานะลูปการทำงาน (Timing Loop): จังหวะเวลาการสลับติด-ดับของแต่ละสีและช่วงพักระบบตรงตามที่กำหนดไว้ในมาโคร TIME_ACTIVE_MS (2500 ms) และ TIME_REST_MS (3000 ms) ผ่านฟังก์ชัน vTaskDelay() อย่างถูกต้อง
 
 
