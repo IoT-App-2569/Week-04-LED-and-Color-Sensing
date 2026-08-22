@@ -4,9 +4,22 @@
 
 1. **การพล็อตพฤติกรรมทางกายภาพ (Transient Response Curve):**
     
-   
+   <img width="923" height="581" alt="image" src="https://github.com/user-attachments/assets/4574ca5b-0e58-4258-bea4-88c5d2dacbda" />
+
+   ----------
+
+   <img width="1830" height="567" alt="image" src="https://github.com/user-attachments/assets/9db9be8f-2588-4f9f-956a-78fab1cd8189" />
+-----------
+
+   <img width="1831" height="575" alt="image" src="https://github.com/user-attachments/assets/7741567c-e1f8-48a5-98e8-dfb6e6558beb" />
+
+------
+
+<img width="1840" height="577" alt="image" src="https://github.com/user-attachments/assets/a2c9339e-1a68-47fc-9f84-b3bc3e1aa438" />
+
+-------------
     
-2. **คำถามนำเพื่อการวิเคราะห์เชิงระบบ (Critical Thinking):**
+3. **คำถามนำเพื่อการวิเคราะห์เชิงระบบ (Critical Thinking):**
     
     - จากกราฟที่พล๊อตออกมา นักศึกษาสังเกตเห็นแนวโน้มตัวเลขของค่า ADC ตั้งแต่แซมเปิ้ลที่ 1 ไต่ระดับลงมาหรือขึ้นไปจนถึงแซมเปิ้ลที่ 20 อย่างไร? 
 
