@@ -1,35 +1,26 @@
 # ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่ 1
 
-
 ### หัวข้อ: การควบคุมจังหวะเวลาเอาต์พุตดิจิทัล (Time-Domain Multiplexing with RGB LED)
 
 ### 1. วัตถุประสงค์
 
-1. เพื่อให้ผู้เรียนสามารถควบคุมขาสัญญาณดิจิทัลเอาต์พุต (GPIO) โดยใช้เฟรมเวิร์ก ESP-IDF 
-    
+1. เพื่อให้ผู้เรียนสามารถควบคุมขาสัญญาณดิจิทัลเอาต์พุต (GPIO) โดยใช้เฟรมเวิร์ก ESP-IDF
 2. เพื่อให้ผู้เรียนสามารถจัดการจังหวะเวลาทางกายภาพ (Transient & Steady States) ผ่านฟังก์ชัน FreeRTOS ในโปรแกรม
-    
 3. เพื่อฝึกฝนการเขียนลูปสลับสถานะของสัญญาณ (Active Phase) และการเว้นระยะพักประจุระบบ (Rest Phase) ก่อนนำไปใช้ในงาน Active Sensing
-    
 
 ### 2. อุปกรณ์ที่ใช้ในการทดลอง
 
-1. บอร์ดไมโครคอนโทรลเลอร์ ESP32  จำนวน 1 บอร์ด
-    
+1. บอร์ดไมโครคอนโทรลเลอร์ ESP32 จำนวน 1 บอร์ด
 2. หลอด LED สามสี (RGB LED) ชนิด Common Cathode หรือ Common Anode จำนวน 1 ดวง
-    
 3. ตัวต้านทาน (Resistor) ขนาด $330 \Omega$ หรือ $470 \Omega$ จำนวน 3 ตัว
-    
 4. โฟโต้บอร์ด (Breadboard) และสายจัมเปอร์ (Jumper Wires)
-    
 
 ### 3. วงจรการทดลองและการคำนวณทางกายภาพ
 
-ในโลกกายภาพ รอยต่อ PN ของ LED แต่ละสีมีแรงดันตกคร่อมและคุณสมบัติความจุไฟฟ้าแฝงต่างกัน 
+ในโลกกายภาพ รอยต่อ PN ของ LED แต่ละสีมีแรงดันตกคร่อมและคุณสมบัติความจุไฟฟ้าแฝงต่างกัน
 
-นักศึกษาต้องต่อตัวต้านทานอนุกรมเข้ากับขา **GPIO4 (สีแดง)**, **GPIO5 (สีเขียว)**, และ **GPIO6 (สีน้ำเงิน)**  เพื่อจำกัดกระแสไฟฟ้าไม่ให้ชิปเกิดความเสียหาย
+นักศึกษาต้องต่อตัวต้านทานอนุกรมเข้ากับขา **GPIO4 (สีแดง)**, **GPIO5 (สีเขียว)**, และ **GPIO6 (สีน้ำเงิน)** เพื่อจำกัดกระแสไฟฟ้าไม่ให้ชิปเกิดความเสียหาย
 (หมายเหตุ ถ้าบอร์ดของนักศึกษาเป็น ESP32 ที่มี flash memory ในโมดูล ต้องเปลี่ยน GPIO6 เป็นขาอื่น เนื่องจากถูกใช้กับ flash memory)
-
 
 ![](../Images/ESP32-RGB_LED.svg)
 
@@ -39,8 +30,7 @@
 
 $I_{LED} = \frac {(V_s-V_{LED})}{R}$
 
-
-กระแสและกำลังที่  LED แต่ละสี
+กระแสและกำลังที่ LED แต่ละสี
 
 | LED สี  | แรงดันตกคร่อม (ค่าเฉลี่ย: โวลต์) | กระแส                        | กำลังงาน                                      |
 | :------ | :------------------------------- | :--------------------------- | :-------------------------------------------- |
@@ -48,12 +38,11 @@ $I_{LED} = \frac {(V_s-V_{LED})}{R}$
 | เขียว   | 2.0                              | ${(3.3-2.0)}/{470} = 2.77mA$ | $P=E \times I$ = $2.0V \times 2.77mA =5.54mW$ |
 | น้ำเงิน | 3.0                              | ${(3.3-3.0)}/{470} = 0.64mA$ | $P=E \times I$ = $3.0V \times 0.64mA =1.92mW$ |
 
-
 ![](../Images/common%20anode.svg)
 
 **รูปที่ 2** LED Common Anode
 
-กระแสและกำลังที่  LED แต่ละสี
+กระแสและกำลังที่ LED แต่ละสี
 
 | LED สี  | แรงดันตกคร่อม (ค่าเฉลี่ย: โวลต์) | กระแส                        | กำลังงาน                                       |
 | ------- | -------------------------------- | ---------------------------- | :--------------------------------------------- |
@@ -61,14 +50,15 @@ $I_{LED} = \frac {(V_s-V_{LED})}{R}$
 | เขียว   | 2.0                              | ${(5.0-2.0)}/{470} = 6.38mA$ | $P=E \times I$ = $2.0V \times 6.38mA =12.76mW$ |
 | น้ำเงิน | 3.0                              | ${(5.0-3.0)}/{470} = 4.25mA$ | $P=E \times I$ = $3.0V \times 4.25mA =12.76mW$ |
 |         |                                  |                              |                                                |
+
 #### **หมายเหตุ**
+
 ถ้า LED ที่ได้มาเป็น Common Anode ให้ต่อ common เข้าไฟ +5.0 โวลต์ แต่ยังคงใช้ Resistor ค่าเดิม
 ส่วนการเขียนโปรแกรมต้องกลับค่าบิตให้ตรงตามชนิด LED
 
 #### 3.1 ตัวอย่างซอร์สโค้ดการทดลอง (`main.c`)
 
 ให้นักศึกษาศึกษาโค้ดต่อไปนี้ และกรอกส่วนจังหวะเวลาให้ทำงานตรงตามเงื่อนไข: **ติดดับสลับกันทีละสีดวงละ 2.5 วินาที และเมื่อดับครบหมดทุกสี ให้เว้นระยะพักรอบ 3 วินาที**
-
 
 ```C
 #include <stdio.h>
@@ -101,9 +91,9 @@ void init_rgb_gpio(void)
     gpio_config(&io_conf);
 
     // เริ่มต้นให้ LED ทุกสีดับสนิท
-    gpio_set_level(LED_R_GPIO, 0);  // ถ้า common anode ต้องแก้เป็น gpio_set_level(LED_R_GPIO, 1); 
-    gpio_set_level(LED_G_GPIO, 0);  // ถ้า common anode ต้องแก้เป็น gpio_set_level(LED_G_GPIO, 1); 
-    gpio_set_level(LED_B_GPIO, 0);  // ถ้า common anode ต้องแก้เป็น gpio_set_level(LED_B_GPIO, 1); 
+    gpio_set_level(LED_R_GPIO, 0);  // ถ้า common anode ต้องแก้เป็น gpio_set_level(LED_R_GPIO, 1);
+    gpio_set_level(LED_G_GPIO, 0);  // ถ้า common anode ต้องแก้เป็น gpio_set_level(LED_G_GPIO, 1);
+    gpio_set_level(LED_B_GPIO, 0);  // ถ้า common anode ต้องแก้เป็น gpio_set_level(LED_B_GPIO, 1);
 }
 
 void app_main(void)
@@ -118,7 +108,7 @@ void app_main(void)
         ESP_LOGI(TAG, "Phase R: ON");
         gpio_set_level(LED_R_GPIO, 1);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
-        
+
         gpio_set_level(LED_R_GPIO, 0);
         ESP_LOGI(TAG, "Phase R: OFF");
 
@@ -128,7 +118,7 @@ void app_main(void)
         ESP_LOGI(TAG, "Phase G: ON");
         gpio_set_level(LED_G_GPIO, 1);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
-        
+
         gpio_set_level(LED_G_GPIO, 0);
         ESP_LOGI(TAG, "Phase G: OFF");
 
@@ -138,7 +128,7 @@ void app_main(void)
         ESP_LOGI(TAG, "Phase B: ON");
         gpio_set_level(LED_B_GPIO, 1);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
-        
+
         gpio_set_level(LED_B_GPIO, 0);
         ESP_LOGI(TAG, "Phase B: OFF");
 
@@ -146,10 +136,10 @@ void app_main(void)
         // เฟสที่ 4: ระยะพักระบบ (Rest Phase / Discharge Window)
         // -----------------------------------------------------------
         ESP_LOGI(TAG, "Entering Rest Phase... Waiting for residual charge to dissipate.");
-        
+
         // หน่วงเวลาพักระบบ 3 วินาทีก่อนกลับไปเริ่มสีแดงใหม่
-        vTaskDelay(pdMS_TO_TICKS(TIME_REST_MS)); 
-        
+        vTaskDelay(pdMS_TO_TICKS(TIME_REST_MS));
+
         printf("-----------------------------------------------------------\n");
     }
 }
@@ -159,22 +149,18 @@ void app_main(void)
 
 เพื่อลงทะเบียนระบบพอร์ตและ GPIO ให้โปรเจกต์คอมไพล์ผ่านอย่างถูกต้อง แนะนำให้นักศึกษาใช้โครงสร้าง CMake พื้นฐานดังนี้
 
-
 ```CMake
 idf_component_register(SRCS "main.c"
                     INCLUDE_DIRS "."
                     REQUIRES driver)
 ```
 
-### 4.  บันทึกผลการทดลอง 
+### 4. บันทึกผลการทดลอง
 
-#### 4.1 จาก `idf.py monitor` 
+#### 4.1 จาก `idf.py monitor`
 
-```
+![alt text](image.png)
 
+#### 4.2 จากการสังเกตุ LED
 
-```
-
-#### 4.2 จากการสังเกตุ LED 
-
-
+หลอดไฟ RGB ติดสลับสีกันตามลำดับคือ สีแดง 2.5 วินาที -> สีเขียว 2.5 วินาที -> สีน้ำเงิน 2.5 วินาที จากนั้นไฟดับหมดทุกสีเป็นเวลา 3 วินาที เพื่อพักระบบ แล้วจึงวนกลับมาเริ่มติดสีแดงใหม่อีกรอบ

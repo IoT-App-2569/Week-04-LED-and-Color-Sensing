@@ -1,34 +1,26 @@
-# ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่  3
-
+# ใบงานปฏิบัติการ สัปดาห์ที่ 4 การทดลองย่อยที่ 3
 
 ### หัวข้อ: การประมวลผลสัญญาณเชิงสถิติและการแปลงข้อมูลสู่โลกดิจิทัล (Robust Statistical Filtering)
 
-### 1.  วัตถุประสงค์
+### 1. วัตถุประสงค์
 
 1. เพื่อให้ผู้เรียนประยุกต์ใช้คณิตศาสตร์และสถิติ (Mean & SD) ในการกรองสัญญาณรบกวน (Noise Filter) บนระบบสมาร์ตเซ็นเซอร์
-    
 2. เพื่อให้ผู้เรียนเข้าใจกลไกการคัดแยกข้อมูลผิดปกติ (Outlier Rejection) ผ่านอัลกอริทึม **Trimmed Mean** บนไมโครคอนโทรลเลอร์
-    
 3. เพื่อสร้างข้อมูลดิจิทัลที่สะอาด มีความเสถียร และระบุหน่วยกำกับ (Metadata) มิลลิโวลต์ (mV) ได้ถูกต้องตามหลักการแปลงโลกกายภาพสู่โลกดิจิทัล
-    
 
 ### 2. อุปกรณ์ที่ใช้ในการทดลอง
 
 1. บอร์ดไมโครคอนโทรลเลอร์ ESP32-C6 จำนวน 1 บอร์ด
-    
 2. หลอด LED RGB ภาคส่ง (GPIO4, GPIO5, GPIO6) และหลอด LED สีเดี่ยว ภาครับ (**GPIO2 / ADC1 CH2**)
-    
 3. โฟโต้บอร์ด ตัวต้านทาน และสายจัมเปอร์
-    
 
 ### 3. คำอธิบายโจทย์การทดลอง
 
-ในทางวิศวกรรม การวัดค่าสัญญาณอนาล็อกจากเซ็นเซอร์ที่มีอิมพีแดนซ์สูงจะเกิดสภาวะชั่วครู่ (Transient State) และนอยส์ฉับพลัน  ในใบงานนี้ ซอฟต์แวร์จะส่งสัญญาณสลับไฟ RGB สีละ **2.5 วินาที** จากนั้นจะเว้นระยะพักระบบ **3 วินาที** เพื่อดับไฟระบายประจุ
+ในทางวิศวกรรม การวัดค่าสัญญาณอนาล็อกจากเซ็นเซอร์ที่มีอิมพีแดนซ์สูงจะเกิดสภาวะชั่วครู่ (Transient State) และนอยส์ฉับพลัน ในใบงานนี้ ซอฟต์แวร์จะส่งสัญญาณสลับไฟ RGB สีละ **2.5 วินาที** จากนั้นจะเว้นระยะพักระบบ **3 วินาที** เพื่อดับไฟระบายประจุ
 
 ในกระบวนการประมวลผลสัญญาณ สัญญาณจะถูกสุ่มเก็บค่าดิบ (Raw Data) จำนวน **50 แซมเปิ้ล (n=50)** นำมาทำ **Sorting** เรียงจากน้อยไปมาก แล้วตัดข้อมูลขอบบนและขอบล่างออกฝั่งละ **10%** (ฝั่งละ 5 ตัวอย่าง เหลือข้อมูลใช้งานจริง 40 แซมเปิ้ล) เพื่อหาค่าเฉลี่ยและ SD ของบิต Raw data ที่นิ่งที่สุด แล้วจึงนำค่านั้นส่งต่อให้โมดูล **`eFuse Line Fitting Calibration`** เพื่อแปลงหน่วยเป็นมิลลิโวลต์ (mV) สรุปรายงานในบรรทัดเดียว
 
-####  3.1 ตัวอย่างซอร์สโค้ดการทดลอง (`main.c`)
-
+#### 3.1 ตัวอย่างซอร์สโค้ดการทดลอง (`main.c`)
 
 ```C
 #include <stdio.h>
@@ -50,7 +42,7 @@ static const char *TAG = "LAB3_STAT_FILTER";
 
 #define RX_ADC_UNIT          ADC_UNIT_1
 #define RX_ADC_CHANNEL       ADC_CHANNEL_2
-#define V_REF                3300  
+#define V_REF                3300
 
 #define NUM_SAMPLES          50    // สุ่มเก็บ 50 แซมเปิ้ล
 
@@ -70,7 +62,7 @@ void init_hardware(adc_oneshot_unit_handle_t *adc_handle)
         .mode = GPIO_MODE_OUTPUT,
     };
     gpio_config(&io_conf);
-    
+
     gpio_set_level(TX_LED_R_GPIO, 0);
     gpio_set_level(TX_LED_G_GPIO, 0);
     gpio_set_level(TX_LED_B_GPIO, 0);
@@ -93,17 +85,17 @@ void init_hardware(adc_oneshot_unit_handle_t *adc_handle)
 void process_color_sensing(adc_oneshot_unit_handle_t adc_handle, const char *color_name)
 {
     int raw_samples[NUM_SAMPLES];
-    
+
     // หน่วงเวลารอให้ระดับกระแสไฟฟ้าผ่านเสถียรเข้าสู่ Steady State ชั่วครู่
-    vTaskDelay(pdMS_TO_TICKS(300)); 
+    vTaskDelay(pdMS_TO_TICKS(300));
 
     // 1. สุ่มเก็บระดับประจุบิตดิบความเร็วสูง (ห่างกันตัวอย่างละ 10ms)
-    
+
     for (int i = 0; i < NUM_SAMPLES; i++) {
         int raw_value = 0;
         ESP_ERROR_CHECK(adc_oneshot_read(adc_handle, RX_ADC_CHANNEL, &raw_value));
         raw_samples[i] = raw_value;
-        vTaskDelay(pdMS_TO_TICKS(10)); 
+        vTaskDelay(pdMS_TO_TICKS(10));
         // ถ้านักศึกษาใช้ค่านี้แล้วได้ผลไม่ดี หรือไม่น่าพอใจ สามารถปรับ vTaskDelay(pdMS_TO_TICKS(10)); ให้มีเวลาหน่วงเพิ่มขึ้น
     }
 
@@ -111,9 +103,9 @@ void process_color_sensing(adc_oneshot_unit_handle_t adc_handle, const char *col
     qsort(raw_samples, NUM_SAMPLES, sizeof(int), compare_ints);
 
     // 3. ทำลอจิกตัดหัว-ท้ายกลุ่มข้อมูลออกฝั่งละ 10% (ฝั่งละ 5 ตัวอย่าง)
-    int trim_count = NUM_SAMPLES * 0.10; 
+    int trim_count = NUM_SAMPLES * 0.10;
     int valid_count = NUM_SAMPLES - (2 * trim_count);
-    
+
     double raw_sum = 0.0;
     for (int i = trim_count; i < NUM_SAMPLES - trim_count; i++) {
         raw_sum += raw_samples[i];
@@ -136,7 +128,7 @@ void process_color_sensing(adc_oneshot_unit_handle_t adc_handle, const char *col
     if (do_cali) {
         adc_cali_raw_to_voltage(adc_cali_handle, (int)mean_raw, &final_voltage_mv);
         adc_cali_raw_to_voltage(adc_cali_handle, (int)sd_raw, &sd_voltage_mv);
-        
+
         int zero_offset = 0;
         adc_cali_raw_to_voltage(adc_cali_handle, 0, &zero_offset);
         sd_voltage_mv = abs(sd_voltage_mv - zero_offset);
@@ -151,8 +143,8 @@ void process_color_sensing(adc_oneshot_unit_handle_t adc_handle, const char *col
         sd_voltage_mv = 0;
     }
 
-    // 7. พิมพ์ผลลัพธ์ข้อมูลเชิงสถิติออกทาง Serial Port  
-    printf("Color %s, n = %d (filtered), mean = %.2f, sd = %.2f\n", 
+    // 7. พิมพ์ผลลัพธ์ข้อมูลเชิงสถิติออกทาง Serial Port
+    printf("Color %s, n = %d (filtered), mean = %.2f, sd = %.2f\n",
            color_name, valid_count, (double)final_voltage_mv, (double)sd_voltage_mv);
 }
 
@@ -167,20 +159,20 @@ void app_main(void)
     while (1) {
         // เฟสเปิดสีแดง
         gpio_set_level(TX_LED_R_GPIO, 1);
-        vTaskDelay(pdMS_TO_TICKS(2500)); 
-        gpio_set_level(TX_LED_R_GPIO, 0); 
+        vTaskDelay(pdMS_TO_TICKS(2500));
+        gpio_set_level(TX_LED_R_GPIO, 0);
         process_color_sensing(adc1_handle, "R");
 
         // เฟสเปิดสีเขียว
         gpio_set_level(TX_LED_G_GPIO, 1);
-        vTaskDelay(pdMS_TO_TICKS(2500)); 
-        gpio_set_level(TX_LED_G_GPIO, 0); 
+        vTaskDelay(pdMS_TO_TICKS(2500));
+        gpio_set_level(TX_LED_G_GPIO, 0);
         process_color_sensing(adc1_handle, "G");
 
         // เฟสเปิดสีน้ำเงิน
         gpio_set_level(TX_LED_B_GPIO, 1);
-        vTaskDelay(pdMS_TO_TICKS(2500)); 
-        gpio_set_level(TX_LED_B_GPIO, 0); 
+        vTaskDelay(pdMS_TO_TICKS(2500));
+        gpio_set_level(TX_LED_B_GPIO, 0);
         process_color_sensing(adc1_handle, "B");
 
         // ดับไฟทุกดวงและพักรอบระบบ 3 วินาที เพื่อรีเซ็ตพลังงานทางกายภาพ
@@ -192,7 +184,6 @@ void app_main(void)
 
 #### 3.2 ไฟล์โปรเจกต์ (`main/CMakeLists.txt`)
 
-
 ```CMake
 idf_component_register(SRCS "main.c"
                     INCLUDE_DIRS "."
@@ -203,8 +194,8 @@ component_compile_options(-lm)
 target_link_libraries(${COMPONENT_LIB} PRIVATE m)
 ```
 
-
 #### 3.3 ตัวอย่างเอาต์พุต
+
 ```
 ==============================================================
 Color R, n = 40 (filtered), mean = 321.00, sd = 7.00
@@ -224,15 +215,49 @@ Color G, n = 40 (filtered), mean = 1143.00, sd = 8.00
 Color B, n = 40 (filtered), mean = 366.00, sd = 12.00
 ```
 
-
 ### 4. รายงานการทดลองและเกณฑ์การตรวจแล็บ
 
 1. **การคัดกรองข้อมูลคุณภาพ (Data Selection Report):**
-    
-    ให้นักศึกษาสังเกตค่าสถิติที่แสดงผลบนหน้าจอต่อเนื่องกัน 5 รอบวงลูป ให้นักศึกษาทำเครื่องหมายคัดเลือกเฉพาะชุดข้อมูลที่ผ่านเกณฑ์คุณภาพวิศวกรรมลงในตาราง โดยมีข้อกำหนดว่า **"ชุดข้อมูลที่น่าเชื่อถือ จะต้องมีค่า SD ต่ำสอดคล้องกันทุกเฟสสี (เช่น อยู่ในช่วง 2.00 ถึง 35.00) และต้องไม่มีค่าเฉลี่ยหรือค่า SD ใดหลุดเป็น 0.00 ในขณะที่มีการส่องสว่างส่งแสงข้ามช่องสัญญาณ"**
-    
+
+   ให้นักศึกษาสังเกตค่าสถิติที่แสดงผลบนหน้าจอต่อเนื่องกัน 5 รอบวงลูป ให้นักศึกษาทำเครื่องหมายคัดเลือกเฉพาะชุดข้อมูลที่ผ่านเกณฑ์คุณภาพวิศวกรรมลงในตาราง โดยมีข้อกำหนดว่า **"ชุดข้อมูลที่น่าเชื่อถือ จะต้องมีค่า SD ต่ำสอดคล้องกันทุกเฟสสี (เช่น อยู่ในช่วง 2.00 ถึง 35.00) และต้องไม่มีค่าเฉลี่ยหรือค่า SD ใดหลุดเป็น 0.00 ในขณะที่มีการส่องสว่างส่งแสงข้ามช่องสัญญาณ"**
+
+**ภาพผลการทดลองใน Serial Monitor**
+
+```text
+Color R, n = 40 (filtered), mean = 1391.00, sd = 6.00
+Color G, n = 40 (filtered), mean = 727.00, sd = 17.00
+Color B, n = 40 (filtered), mean = 642.00, sd = 23.00
+--------------------------------------------------------------
+Color R, n = 40 (filtered), mean = 1390.00, sd = 6.00
+Color G, n = 40 (filtered), mean = 718.00, sd = 9.00
+Color B, n = 40 (filtered), mean = 677.00, sd = 28.00
+--------------------------------------------------------------
+Color R, n = 40 (filtered), mean = 1385.00, sd = 9.00
+Color G, n = 40 (filtered), mean = 810.00, sd = 18.00
+Color B, n = 40 (filtered), mean = 675.00, sd = 26.00
+--------------------------------------------------------------
+Color R, n = 40 (filtered), mean = 1389.00, sd = 9.00
+Color G, n = 40 (filtered), mean = 803.00, sd = 19.00
+Color B, n = 40 (filtered), mean = 448.00, sd = 13.00
+--------------------------------------------------------------
+Color R, n = 40 (filtered), mean = 1398.00, sd = 1.00
+Color G, n = 40 (filtered), mean = 792.00, sd = 11.00
+Color B, n = 40 (filtered), mean = 432.00, sd = 17.00
+```
+
+**ตารางสรุปผลการคัดกรองข้อมูลคุณภาพ (5 รอบการทดลอง)**
+
+| รอบที่ | เฟสสี R (Mean ± SD mV) | เฟสสี G (Mean ± SD mV) | เฟสสี B (Mean ± SD mV) | สถานะเกณฑ์คุณภาพวิศวกรรม          |
+| :----: | :--------------------: | :--------------------: | :--------------------: | :-------------------------------- |
+|   1    |     1391.00 ± 6.00     |     727.00 ± 17.00     |     642.00 ± 23.00     | Pass (ผ่านเกณฑ์ SD ต่ำกว่า 35 mV) |
+|   2    |     1390.00 ± 6.00     |     718.00 ± 9.00      |     677.00 ± 28.00     | Pass (ผ่านเกณฑ์ SD ต่ำกว่า 35 mV) |
+|   3    |     1385.00 ± 9.00     |     810.00 ± 18.00     |     675.00 ± 26.00     | Pass (ผ่านเกณฑ์ SD ต่ำกว่า 35 mV) |
+|   4    |     1389.00 ± 9.00     |     803.00 ± 19.00     |     448.00 ± 13.00     | Pass (ผ่านเกณฑ์ SD ต่ำกว่า 35 mV) |
+|   5    |     1398.00 ± 1.00     |     792.00 ± 11.00     |     432.00 ± 17.00     | Pass (ผ่านเกณฑ์ SD ต่ำกว่า 35 mV) |
+
 2. **คำถามเชิงวิเคราะห์ (Engineering Evaluation):**
-    
-    - หลังจากเปลี่ยนสถาปัตยกรรมซอฟต์แวร์มาใช้ระบบกรองบิตดิบแบบ `Trimmed Mean` ก่อนทำการแปลงแรงดัน เปรียบเทียบกับพฤติกรรมอนุกรมเวลาในใบงานที่ 2 แล้ว ค่าความผันผวน ($SD$) มีการพัฒนาไปในทางที่ดีขึ้นอย่างไร?
-        
-    - ในการนำข้อมูลดิจิทัลนี้ไปใช้ควบคุมหุ่นยนต์แยกแยะวัตถุสีในโลกจริง เหตุใดการระบุหน่วยวัดร่วมประมวลผลในรูปของ **แรงดันทางกายภาพ (mV)** จึงมีความสำคัญและเสถียรมากกว่าการใช้ข้อมูลระดับบิตดิจิทัลดิบ (Raw Scale 0-4095) ตรง ๆ? ให้แปรผลโดยอิงความรู้จากเนื้อหาในหัวข้อตำราเรียนเรื่อง "สองโลกที่แตกต่าง"
+   - หลังจากเปลี่ยนสถาปัตยกรรมซอฟต์แวร์มาใช้ระบบกรองบิตดิบแบบ `Trimmed Mean` ก่อนทำการแปลงแรงดัน เปรียบเทียบกับพฤติกรรมอนุกรมเวลาในใบงานที่ 2 แล้ว ค่าความผันผวน ($SD$) มีการพัฒนาไปในทางที่ดีขึ้นอย่างไร?
+     ตอบ: ค่า SD ลดลงและนิ่งขึ้นมากครับ เพราะการใช้ Trimmed Mean ช่วยตัดค่าที่กระโดดเพี้ยนๆ (Outliers) ช่วงหัวและท้ายออกไป ทำให้ค่าสถิติที่ได้ไม่ถูกค่ารบกวนดึงให้เพี้ยน ข้อมูลเลยมีความเสถียรขึ้นเยอะเมื่อเทียบกับแล็บ 2
+
+   - ในการนำข้อมูลดิจิทัลนี้ไปใช้ควบคุมหุ่นยนต์แยกแยะวัตถุสีในโลกจริง เหตุใดการระบุหน่วยวัดร่วมประมวลผลในรูปของ **แรงดันทางกายภาพ (mV)** จึงมีความสำคัญและเสถียรมากกว่าการใช้ข้อมูลระดับบิตดิจิทัลดิบ (Raw Scale 0-4095) ตรง ๆ? ให้แปรผลโดยอิงความรู้จากเนื้อหาในหัวข้อตำราเรียนเรื่อง "สองโลกที่แตกต่าง"
+     ตอบ: เพราะค่าบิตดิบ (0-4095) ของบอร์ดแต่ละตัวอาจอ่านได้ไม่เท่ากันแม้อยู่ในสภาพแวดล้อมเดียวกัน แต่การแปลงเป็นหน่วยแรงดันไฟฟ้าจริง (mV) ช่วยให้ได้ค่ามาตรฐานกลางในโลกจริง นำไปใช้อ้างอิงสั่งงานหุ่นยนต์แยกสีได้เสถียรและแม่นยำกว่าการใช้ค่าบิตดิบตรงๆ
