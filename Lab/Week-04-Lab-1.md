@@ -187,4 +187,4 @@ I (7779) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to 
 
 #### 4.2 จากการสังเกตุ LED 
 
-
+https://youtube.com/shorts/8ZUO0xhRa-Q?si=1Pwaq9-ERaZCszvg
