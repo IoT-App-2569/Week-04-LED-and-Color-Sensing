@@ -170,11 +170,33 @@ idf_component_register(SRCS "main.c"
 
 #### 4.1 จาก `idf.py monitor` 
 
-```
-
-
+```text
+I (314) RGB_TIMING: RGB LED Timing System Started.
+I (324) RGB_TIMING: Phase R: ON
+I (2824) RGB_TIMING: Phase R: OFF
+I (2824) RGB_TIMING: Phase G: ON
+I (5324) RGB_TIMING: Phase G: OFF
+I (5324) RGB_TIMING: Phase B: ON
+I (7824) RGB_TIMING: Phase B: OFF
+I (7824) RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (10824) RGB_TIMING: Phase R: ON
+I (13324) RGB_TIMING: Phase R: OFF
+I (13324) RGB_TIMING: Phase G: ON
+I (15824) RGB_TIMING: Phase G: OFF
+I (15824) RGB_TIMING: Phase B: ON
+I (18324) RGB_TIMING: Phase B: OFF
+I (18324) RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
 ```
 
 #### 4.2 จากการสังเกตุ LED 
 
-
+1. **ลำดับการสลับสี (TDM Switching Sequence):**
+   - หลอด RGB LED สว่างทีละสีตามลำดับอย่างถูกต้อง: **สีแดง (2.5 วินาที)** $\rightarrow$ **สีเขียว (2.5 วินาที)** $\rightarrow$ **สีน้ำเงิน (2.5 วินาที)**
+   - หลังจากครบทั้ง 3 สี หลอดไฟจะดับสนิททุกดวงเป็นเวลา **3.0 วินาที (Rest Phase)** ก่อนจะวนกลับมาเริ่มต้นที่สีแดงใหม่อย่างต่อเนื่อง
+2. **ความสว่างและระดับพลังงานทางกายภาพ:**
+   - แสงสีแดงและสีเขียวสว่างชัดเจน โดยสีเขียวจะดูสว่างกว่าเนื่องจากความไวของสายตามนุษย์ (Luminous Efficiency) แม้กระแสไหลผ่าน ($I \approx 2.77\text{ mA}$) จะใกล้เคียงกับสีแดง ($I \approx 3.19\text{ mA}$)
+   - แสงสีน้ำเงินมีแรงดันตกคร่อมสูงที่สุด ($V_f \approx 3.0\text{ V}$) ส่งผลให้แรงดันตกคร่อมตัวต้านทานเหลือน้อย กระแสจึงไหลเพียง $I \approx 0.64\text{ mA}$ แต่ยังสามารถมองเห็นแสงสีน้ำเงินได้อย่างชัดเจน
+3. **ความสำคัญของ Rest Phase ต่อการตรวจรู้ (Active Sensing):**
+   - ในช่วงดับไฟ 3 วินาที เป็นการเปิดโอกาสให้ประจุที่ตกค้างในสารกึ่งตัวนำและตัวเก็บประจุแฝงของระบบคลายตัวลงจนหมด เพื่อป้องกันไม่ให้โฟตอนและประจุของเฟสก่อนหน้าไหลปะปนกับเฟสถัดไป ซึ่งจำเป็นอย่างยิ่งต่อการใช้งานร่วมกับเซนเซอร์ภาครับในแล็บถัดไป
