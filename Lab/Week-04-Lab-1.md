@@ -169,11 +169,8 @@ idf_component_register(SRCS "main.c"
 ### 4.  บันทึกผลการทดลอง 
 
 #### 4.1 จาก `idf.py monitor` 
+<img width="1470" height="956" alt="ภาพถ่ายหน้าจอ 2569-10-26 เวลา 08 45 14" src="https://github.com/user-attachments/assets/7cf58320-2a48-453b-8104-7d82c2a603a0" />
 
-```
-
-
-```
 
 #### 4.2 จากการสังเกตุ LED 
 
