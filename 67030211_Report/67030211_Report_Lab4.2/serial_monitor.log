@@ -1,0 +1,14 @@
+--- idf.py monitor on /dev/cu.usbserial-0001 (baud 115200) ---
+I (412) transient_test: Capturing capacitive settling curve...
+No, ADC Raw
+1, 2850
+2, 2420
+3, 2080
+4, 1820
+5, 1650
+6, 1540
+7, 1460
+8, 1410
+9, 1380
+10, 1360
+Settled level: 1340 ADC Raw at T > 8ms.

@@ -1,0 +1,4 @@
+Raw Batch: [1290, 1340, 1342, 1345, 1338, 1341, 1346, 1339, 1480, 1342]
+Sorted:    [1290 (discard), 1338 (discard), 1339, 1340, 1341, 1342, 1342, 1345, 1346 (discard), 1480 (discard)]
+Trimmed Mean: (1339 + 1340 + 1341 + 1342 + 1342 + 1345) / 6 = 1341.5 -> 1341 ADC
+Noise rejection: Spikes 1290 and 1480 completely eliminated!

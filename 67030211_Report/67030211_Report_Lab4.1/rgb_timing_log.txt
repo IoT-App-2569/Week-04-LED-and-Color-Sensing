@@ -1,0 +1,8 @@
+[RGB Timing Phase Log]
+T+000ms: RED ON (Active 100ms)
+T+100ms: RED OFF (Rest 50ms)
+T+150ms: GREEN ON (Active 100ms)
+T+250ms: GREEN OFF (Rest 50ms)
+T+300ms: BLUE ON (Active 100ms)
+T+400ms: BLUE OFF (Rest 50ms)
+Duty Cycle: 66.7% active, 33.3% rest phase.
