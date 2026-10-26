@@ -18,7 +18,6 @@ int get_trimmed_mean(void) {
     }
     qsort(buf, SAMPLES, sizeof(int), compare_ints);
 
-    // Discard 2 lowest and 2 highest
     int sum = 0;
     for (int i = 2; i < SAMPLES - 2; i++) {
         sum += buf[i];

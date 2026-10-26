@@ -14,19 +14,16 @@ void app_main(void)
     gpio_set_direction(PIN_BLUE, GPIO_MODE_OUTPUT);
 
     while (1) {
-        // Red Active
         gpio_set_level(PIN_RED, 1);
         vTaskDelay(pdMS_TO_TICKS(100));
         gpio_set_level(PIN_RED, 0);
-        vTaskDelay(pdMS_TO_TICKS(50)); // Rest
+        vTaskDelay(pdMS_TO_TICKS(50));
 
-        // Green Active
         gpio_set_level(PIN_GREEN, 1);
         vTaskDelay(pdMS_TO_TICKS(100));
         gpio_set_level(PIN_GREEN, 0);
         vTaskDelay(pdMS_TO_TICKS(50));
 
-        // Blue Active
         gpio_set_level(PIN_BLUE, 1);
         vTaskDelay(pdMS_TO_TICKS(100));
         gpio_set_level(PIN_BLUE, 0);

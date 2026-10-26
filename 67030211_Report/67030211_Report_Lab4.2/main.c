@@ -18,12 +18,11 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(50));
         gpio_set_level(LED_PIN, 0);
 
-        // Immediate sample sequence to capture transient decay
         printf("No, ADC Raw\n");
         for (int i = 1; i <= 20; i++) {
             int raw = adc1_get_raw(ADC_CH);
             printf("%d, %d\n", i, raw);
-            esp_rom_delay_us(500); // 500us interval
+            esp_rom_delay_us(500);
         }
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
