@@ -23,23 +23,8 @@
 
 ## 2. แผนผังเนื้อหาการเรียนรู้ประจำสัปดาห์ (Lesson Roadmap)
 
-```mermaid
-flowchart LR
-    A["<b>สัปดาห์ที่ 04</b><br> LED Physics & Active Color Sensing"] --> B["1. ฟิสิกส์รอยต่อ PN & ทฤษฎี Bandgap<br/>(Forward Bias Emission vs Photovoltaic Detection)"]
-    A --> C["2. ข้อจำกัดทางกายภาพของเซนเซอร์ LED<br/>(High Impedance, RC Time Constant, Color Selectivity)"]
-    A --> D["3. Time-Domain Multiplexed Active Sensing<br/>(TDM Pulsing: R → G → B, Reflection Sampling)"]
-    A --> E["4. การประมวลผลสัญญาณเชิงสถิติบน MCU<br/>(Arithmetic Mean, SD Noise Index, Trimmed Mean)"]
-    A --> F["5. การประยุกต์ใช้งานเชิงวิศวกรรม IoT<br/>(Color Sorting, Line Tracking Robot, CPS Closed-Loop)"]
-
-    B --> G["<b>Lab 4.1: Time Multiplexing</b><br> ขับกระแส RGB LED ด้วย GPIO & FreeRTOS"]
-    D --> G
-    C --> H["<b>Lab 4.2: Charge Settling Dynamics</b><br> วัดแรงดันโฟโตโวลตาอิก & Transient Analysis"]
-    E --> I["<b>Lab 4.3: Robust Statistical Filtering</b><br> Sorting, 10% Trimmed Mean, SD & eFuse Calibration"]
-
-    G --> J["<b>Optical Fingerprint Acquisition</b><br> สกัดเวกเตอร์สี [V_R, V_G, V_B] ในระดับมิลลิโวลต์"]
-    H --> J
-    I --> J
-```
+<p align="center"><img src="Images/Fig_README_2026-10-27T08-11-28_academic.svg" alt="README" width="800" ></p>
+<p align="center">  แผนผังเนื้อหาการเรียนรู้ประจำสัปดาห์ (Lesson Roadmap)</p>
 
 ---
 
