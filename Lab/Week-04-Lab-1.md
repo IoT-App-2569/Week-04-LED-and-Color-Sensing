@@ -171,7 +171,23 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+I (1000) LAB1_RGB_TIMING: RGB LED Timing System Started.
+I (1010) LAB1_RGB_TIMING: Phase R: ON
+I (3510) LAB1_RGB_TIMING: Phase R: OFF
+I (3510) LAB1_RGB_TIMING: Phase G: ON
+I (6010) LAB1_RGB_TIMING: Phase G: OFF
+I (6010) LAB1_RGB_TIMING: Phase B: ON
+I (8510) LAB1_RGB_TIMING: Phase B: OFF
+I (8510) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (11510) LAB1_RGB_TIMING: Phase R: ON
+I (14010) LAB1_RGB_TIMING: Phase R: OFF
+I (14010) LAB1_RGB_TIMING: Phase G: ON
+I (16510) LAB1_RGB_TIMING: Phase G: OFF
+I (16510) LAB1_RGB_TIMING: Phase B: ON
+I (19010) LAB1_RGB_TIMING: Phase B: OFF
+I (19010) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
 
 ```
 
