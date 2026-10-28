@@ -171,10 +171,43 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+I (1000) LAB1_RGB_TIMING: RGB LED Timing System Started.
+I (1010) LAB1_RGB_TIMING: Phase R: ON
+I (3510) LAB1_RGB_TIMING: Phase R: OFF
+I (3510) LAB1_RGB_TIMING: Phase G: ON
+I (6010) LAB1_RGB_TIMING: Phase G: OFF
+I (6010) LAB1_RGB_TIMING: Phase B: ON
+I (8510) LAB1_RGB_TIMING: Phase B: OFF
+I (8510) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (11510) LAB1_RGB_TIMING: Phase R: ON
+I (14010) LAB1_RGB_TIMING: Phase R: OFF
+I (14010) LAB1_RGB_TIMING: Phase G: ON
+I (16510) LAB1_RGB_TIMING: Phase G: OFF
+I (16510) LAB1_RGB_TIMING: Phase B: ON
+I (19010) LAB1_RGB_TIMING: Phase B: OFF
+I (19010) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
 
+1. เมื่อเริ่มทำงาน LED สีแดงจะติดเป็นเวลา 2.5 วินาที จากนั้นดับลง
+
+
+
+2. LED สีเขียวจะติดเป็นเวลา 2.5 วินาที แล้วดับลง
+
+
+
+3. LED สีน้ำเงินจะติดเป็นเวลา 2.5 วินาที แล้วดับลง
+
+
+
+4. หลังจาก LED ทั้งสามสีดับหมด ระบบจะเว้นระยะพัก 3 วินาที ก่อนกลับไปเริ่มต้นที่ LED สีแดงอีกครั้ง
+
+
+
+5. LED ทำงานสลับกันทีละสีตามลำดับ โดยไม่มีการเปิด LED หลายสีพร้อมกัน และโปรแกรมจะวนซ้ำอย่างต่อเนื่อง
 
