@@ -1,0 +1,7 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=D:/iot 2026/Week-04-LED-and-Color-Sensing/Lab-67030052/Week-04-Lab-3/build/specs/picolibc.specs"
+-fno-rtti

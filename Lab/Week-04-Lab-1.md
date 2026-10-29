@@ -171,7 +171,7 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+![alt text](image.png)
 
 ```
 
