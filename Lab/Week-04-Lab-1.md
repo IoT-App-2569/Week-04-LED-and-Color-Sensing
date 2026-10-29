@@ -171,7 +171,7 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+----------------------------------------------------------- I (220784) LAB1_RGB_TIMING: Phase R: ON I (223284) LAB1_RGB_TIMING: Phase R: OFF I (223284) LAB1_RGB_TIMING: Phase G: ON I (225784) LAB1_RGB_TIMING: Phase G: OFF I (225784) LAB1_RGB_TIMING: Phase B: ON I (228284) LAB1_RGB_TIMING: Phase B: OFF I (228284) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate. -----------------------------------------------------------
 
 ```
 
