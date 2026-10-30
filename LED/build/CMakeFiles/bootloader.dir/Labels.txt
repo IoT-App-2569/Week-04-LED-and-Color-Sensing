@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/Week-04-LED-and-Color-Sensing/LED/build/CMakeFiles/bootloader
+D:/Week-04-LED-and-Color-Sensing/LED/build/CMakeFiles/bootloader.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/CMakeFiles/bootloader-complete.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Week-04-LED-and-Color-Sensing/LED/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
