@@ -171,10 +171,28 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+W (256) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (269) main_task: Started on CPU0
+I (279) main_task: Calling app_main()
+I (279) LAB1_RGB_TIMING: RGB LED Timing System Started.
+I (279) LAB1_RGB_TIMING: Phase R: ON
+I (2779) LAB1_RGB_TIMING: Phase R: OFF
+I (2779) LAB1_RGB_TIMING: Phase G: ON
+I (5279) LAB1_RGB_TIMING: Phase G: OFF
+I (5279) LAB1_RGB_TIMING: Phase B: ON
+I (7779) LAB1_RGB_TIMING: Phase B: OFF
+I (7779) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (10779) LAB1_RGB_TIMING: Phase R: ON
+I (13279) LAB1_RGB_TIMING: Phase R: OFF
+I (13279) LAB1_RGB_TIMING: Phase G: ON
+I (15779) LAB1_RGB_TIMING: Phase G: OFF
+I (15779) LAB1_RGB_TIMING: Phase B: ON
+I (18279) LAB1_RGB_TIMING: Phase B: OFF
+I (18279) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
-
+LED มีการกระพริบตามลำดับโดยเริ่มจากสีแดง เขียว น้ำเงินโดยจะมีระยะเวลาดีเลย์สีละ3วินาทีในการเปลี่ยนเป็นอีกสี
 
