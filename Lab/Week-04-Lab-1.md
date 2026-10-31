@@ -82,7 +82,7 @@ static const char *TAG = "LAB1_RGB_TIMING";
 // กำหนดขา GPIO ตามผังวงจร
 #define LED_R_GPIO        GPIO_NUM_4
 #define LED_G_GPIO        GPIO_NUM_5
-#define LED_B_GPIO        GPIO_NUM_6
+#define LED_B_GPIO        GPIO_NUM_22
 
 // กำหนดเวลาหน่วง (หน่วยมิลลิวินาที) ตามเงื่อนไขของใบงาน
 #define TIME_ACTIVE_MS    2500  // สลับติด-ดับทุกๆ 2.5 วินาที
@@ -116,30 +116,30 @@ void app_main(void)
         // เฟสที่ 1: จ่ายแสงสีแดง (Red Phase)
         // -----------------------------------------------------------
         ESP_LOGI(TAG, "Phase R: ON");
-        gpio_set_level(LED_R_GPIO, 1);
+        gpio_set_level(LED_R_GPIO, 0);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
         
-        gpio_set_level(LED_R_GPIO, 0);
+        gpio_set_level(LED_R_GPIO, 1);
         ESP_LOGI(TAG, "Phase R: OFF");
 
         // -----------------------------------------------------------
         // เฟสที่ 2: จ่ายแสงสีเขียว (Green Phase)
         // -----------------------------------------------------------
         ESP_LOGI(TAG, "Phase G: ON");
-        gpio_set_level(LED_G_GPIO, 1);
+        gpio_set_level(LED_G_GPIO, 0);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
         
-        gpio_set_level(LED_G_GPIO, 0);
+        gpio_set_level(LED_G_GPIO, 1);
         ESP_LOGI(TAG, "Phase G: OFF");
 
         // -----------------------------------------------------------
         // เฟสที่ 3: จ่ายแสงสีน้ำเงิน (Blue Phase)
         // -----------------------------------------------------------
         ESP_LOGI(TAG, "Phase B: ON");
-        gpio_set_level(LED_B_GPIO, 1);
+        gpio_set_level(LED_B_GPIO, 0);
         vTaskDelay(pdMS_TO_TICKS(TIME_ACTIVE_MS));
         
-        gpio_set_level(LED_B_GPIO, 0);
+        gpio_set_level(LED_B_GPIO, 1);
         ESP_LOGI(TAG, "Phase B: OFF");
 
         // -----------------------------------------------------------
