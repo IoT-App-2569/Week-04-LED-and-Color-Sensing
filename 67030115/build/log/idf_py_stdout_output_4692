@@ -1,0 +1,5 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+C:\Users\namthip411\.espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -SC:\Week-04-LED-and-Color-Sensing\67030115 -BC:\Week-04-LED-and-Color-Sensing\67030115\build

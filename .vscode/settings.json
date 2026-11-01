@@ -1,4 +1,6 @@
 {
     "stm32-for-vscode.openOCDPath": false,
-    "stm32-for-vscode.makePath": false
+    "stm32-for-vscode.makePath": false,
+    "cmake.sourceDirectory": "C:/Week-04-LED-and-Color-Sensing/67030115",
+    "idf.currentSetup": "C:\\Users\\namthip411\\esp\\v5.5.1\\esp-idf"
 }
