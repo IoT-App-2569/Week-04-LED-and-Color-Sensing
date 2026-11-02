@@ -1,0 +1,6 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=D:/67030344/Week/Week-04-LED-and-Color-Sensing/67030344/Lab-3/build/specs/picolibc.specs"
