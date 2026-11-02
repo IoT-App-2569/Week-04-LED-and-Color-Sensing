@@ -137,6 +137,12 @@ I (154771) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge t
     20, 23
     ==============================================================
     ```
+    <img width="361" height="217" alt="image" src="https://github.com/user-attachments/assets/539903ad-e010-4233-832f-c73637f6022f" />
+    <img width="361" height="217" alt="image" src="https://github.com/user-attachments/assets/522c6f99-14fc-493d-b185-1f755f79ab79" />
+    <img width="361" height="217" alt="image" src="https://github.com/user-attachments/assets/6a2236f3-8375-40c5-a38c-b7d5c1441720" />
+
+
+
 2. **คำถามนำเพื่อการวิเคราะห์เชิงระบบ (Critical Thinking):**
     
     - จากกราฟที่พล๊อตออกมา นักศึกษาสังเกตเห็นแนวโน้มตัวเลขของค่า ADC ตั้งแต่แซมเปิ้ลที่ 1 ไต่ระดับลงมาหรือขึ้นไปจนถึงแซมเปิ้ลที่ 20 อย่างไร? 
